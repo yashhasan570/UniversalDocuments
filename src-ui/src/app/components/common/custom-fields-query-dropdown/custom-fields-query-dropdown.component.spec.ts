@@ -1,0 +1,459 @@
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
+import { provideHttpClientTesting } from '@angular/common/http/testing'
+import { LOCALE_ID } from '@angular/core'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { NgbDateAdapter, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgSelectModule } from '@ng-select/ng-select'
+import { of } from 'rxjs'
+import { CustomField, CustomFieldDataType } from 'src/app/data/custom-field'
+import {
+  CUSTOM_FIELD_QUERY_OPERATORS_BY_GROUP,
+  CustomFieldQueryLogicalOperator,
+  CustomFieldQueryOperator,
+  CustomFieldQueryOperatorGroups,
+} from 'src/app/data/custom-field-query'
+import { CustomFieldsService } from 'src/app/services/rest/custom-fields.service'
+import {
+  CustomFieldQueryAtom,
+  CustomFieldQueryElement,
+  CustomFieldQueryExpression,
+} from 'src/app/utils/custom-field-query-element'
+import { ISODateAdapter } from 'src/app/utils/ngb-iso-date-adapter'
+import {
+  CustomFieldQueriesModel,
+  CustomFieldsQueryDropdownComponent,
+} from './custom-fields-query-dropdown.component'
+
+const customFields = [
+  {
+    id: 1,
+    name: 'Test Field',
+    data_type: CustomFieldDataType.String,
+    extra_data: {},
+  },
+  {
+    id: 2,
+    name: 'Test Select Field',
+    data_type: CustomFieldDataType.Select,
+    extra_data: {
+      select_options: [
+        { label: 'Option 1', id: 'abc-123' },
+        { label: 'Option 2', id: 'def-456' },
+      ],
+    },
+  },
+  {
+    id: 3,
+    name: 'Test Monetary Field',
+    data_type: CustomFieldDataType.Monetary,
+    extra_data: { default_currency: 'EUR' },
+  },
+  {
+    id: 4,
+    name: 'Test Date Field',
+    data_type: CustomFieldDataType.Date,
+    extra_data: {},
+  },
+]
+
+describe('CustomFieldsQueryDropdownComponent', () => {
+  let component: CustomFieldsQueryDropdownComponent
+  let fixture: ComponentFixture<CustomFieldsQueryDropdownComponent>
+  let customFieldsService: CustomFieldsService
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        NgbDropdownModule,
+        NgSelectModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CustomFieldsQueryDropdownComponent,
+      ],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+        { provide: LOCALE_ID, useValue: 'de' },
+        { provide: NgbDateAdapter, useClass: ISODateAdapter },
+      ],
+    }).compileComponents()
+
+    customFieldsService = TestBed.inject(CustomFieldsService)
+    jest.spyOn(customFieldsService, 'listAll').mockReturnValue(
+      of({
+        count: customFields.length,
+        all: customFields.map((f) => f.id),
+        results: customFields,
+      })
+    )
+    fixture = TestBed.createComponent(CustomFieldsQueryDropdownComponent)
+    component = fixture.componentInstance
+    component.icon = 'ui-radios'
+    fixture.detectChanges()
+  })
+
+  it('should initialize custom fields on creation', () => {
+    expect(component.customFields()).toEqual(customFields)
+  })
+
+  it('should add an expression when opened if queries are empty', () => {
+    component.selectionModel.clear()
+    component.onOpenChange(true)
+    expect(component.selectionModel.queries.length).toBe(1)
+  })
+
+  it('should support reset the selection model', () => {
+    component.selectionModel.addExpression()
+    component.reset()
+    expect(component.selectionModel.isEmpty()).toBeTruthy()
+  })
+
+  it('should get operators for a field', () => {
+    const field: CustomField = {
+      id: 1,
+      name: 'Test Field',
+      data_type: CustomFieldDataType.String,
+      extra_data: {},
+    }
+    component.customFields.set([field])
+    const operators = component.getOperatorsForField(1)
+    expect(operators.length).toEqual(
+      [
+        ...CUSTOM_FIELD_QUERY_OPERATORS_BY_GROUP[
+          CustomFieldQueryOperatorGroups.Basic
+        ],
+        ...CUSTOM_FIELD_QUERY_OPERATORS_BY_GROUP[
+          CustomFieldQueryOperatorGroups.Exact
+        ],
+        ...CUSTOM_FIELD_QUERY_OPERATORS_BY_GROUP[
+          CustomFieldQueryOperatorGroups.String
+        ],
+      ].length
+    )
+
+    // Fallback to basic operators if field is not found
+    const operators2 = component.getOperatorsForField(2)
+    expect(operators2.length).toEqual(
+      CUSTOM_FIELD_QUERY_OPERATORS_BY_GROUP[
+        CustomFieldQueryOperatorGroups.Basic
+      ].length
+    )
+  })
+
+  it('should get select options for a field', () => {
+    const field: CustomField = {
+      id: 1,
+      name: 'Test Field',
+      data_type: CustomFieldDataType.Select,
+      extra_data: {
+        select_options: [
+          { label: 'Option 1', id: 'abc-123' },
+          { label: 'Option 2', id: 'def-456' },
+        ],
+      },
+    }
+    component.customFields.set([field])
+    const options = component.getSelectOptionsForField(1)
+    expect(options).toEqual([
+      { label: 'Option 1', id: 'abc-123' },
+      { label: 'Option 2', id: 'def-456' },
+    ])
+
+    // Fallback to empty array if field is not found
+    const options2 = component.getSelectOptionsForField(2)
+    expect(options2).toEqual([])
+  })
+
+  it('should normalize localized monetary comparison values', () => {
+    const atom = new CustomFieldQueryAtom([3, 'exact', null])
+
+    component.setMonetaryValue(atom, '1.234,56')
+
+    expect(atom.value).toEqual('1234.56')
+  })
+
+  it('should preserve API-formatted monetary comparison values', () => {
+    const atom = new CustomFieldQueryAtom([3, 'exact', null])
+
+    component.setMonetaryValue(atom, '1234.56')
+
+    expect(atom.value).toEqual('1234.56')
+  })
+
+  it('should remove an element from the selection model', () => {
+    const expression = new CustomFieldQueryExpression()
+    const atom = new CustomFieldQueryAtom()
+    ;(expression.value as CustomFieldQueryElement[]).push(atom)
+    component.selectionModel.addExpression(expression)
+    component.removeElement(atom)
+    expect(component.selectionModel.isEmpty()).toBeTruthy()
+    const expression2 = new CustomFieldQueryExpression([
+      CustomFieldQueryLogicalOperator.And,
+      [
+        [1, 'icontains', 'test'],
+        [2, 'icontains', 'test'],
+      ],
+    ])
+    component.selectionModel.addExpression(expression2)
+    component.removeElement(expression2)
+    expect(component.selectionModel.isEmpty()).toBeTruthy()
+  })
+
+  it('should emit selectionModelChange when model changes', () => {
+    const nextSpy = jest.spyOn(component.selectionModelChange, 'next')
+    const atom = new CustomFieldQueryAtom([1, 'icontains', 'test'])
+    component.selectionModel.addAtom(atom)
+    atom.changed.next(atom)
+    expect(nextSpy).toHaveBeenCalled()
+  })
+
+  it('should complete selection model subscription when new selection model is set', () => {
+    const completeSpy = jest.spyOn(component.selectionModel.changed, 'complete')
+    const selectionModel = new CustomFieldQueriesModel()
+    component.selectionModel = selectionModel
+    expect(completeSpy).toHaveBeenCalled()
+  })
+
+  it('should support adding an atom', () => {
+    const expression = new CustomFieldQueryExpression()
+    component.addAtom(expression)
+    expect(expression.value.length).toBe(1)
+  })
+
+  it('should support adding an expression', () => {
+    const expression = new CustomFieldQueryExpression()
+    component.addExpression(expression)
+    expect(expression.value.length).toBe(1)
+  })
+
+  it('should support getting a custom field by ID', () => {
+    expect(component.getCustomFieldByID(1)).toEqual(customFields[0])
+  })
+
+  it('should sanitize name from title', () => {
+    component.title = 'Test Title'
+    expect(component.name).toBe('test_title')
+  })
+
+  it('should add a default atom on open', async () => {
+    expect(component.selectionModel.queries.length).toBe(0)
+    component.onOpenChange(true)
+    fixture.detectChanges()
+    await fixture.whenStable()
+    expect(component.selectionModel.queries.length).toBe(1)
+  })
+
+  it('should build relative date values from amount and unit', async () => {
+    component.useDropdown = false
+    const atom = new CustomFieldQueryAtom([
+      4,
+      CustomFieldQueryOperator.GreaterThanOrEqual,
+      '2026-10-22',
+    ])
+    component.selectionModel.addAtom(atom)
+    fixture.detectChanges()
+    await fixture.whenStable()
+    const query = (selector: string) =>
+      fixture.nativeElement.querySelector(selector)
+    expect(query('[ngbDatepicker]')).not.toBeNull()
+    expect(query('input[id$="_fixed"]').checked).toBe(true)
+
+    query('input[id$="_relative"]').click()
+    fixture.detectChanges()
+    await fixture.whenStable()
+    expect(atom.value).toBeNull()
+    const amount: HTMLInputElement = query('input[aria-label="Amount"]')
+    const unit: HTMLSelectElement = query('select[id$="_unit"]')
+    amount.value = '30'
+    amount.dispatchEvent(new Event('input'))
+    expect(atom.serialize()).toEqual([4, 'gte', '30 days ago'])
+    unit.selectedIndex = 6
+    unit.dispatchEvent(new Event('change'))
+    expect(atom.serialize()).toEqual([4, 'gte', 'in 30 weeks'])
+    unit.selectedIndex = 0
+    unit.dispatchEvent(new Event('change'))
+    fixture.detectChanges()
+    expect(atom.serialize()).toEqual([4, 'gte', 'today'])
+    expect(query('input[aria-label="Amount"]')).toBeNull()
+
+    query('input[id$="_fixed"]').click()
+    fixture.detectChanges()
+    expect(atom.value).toBeNull()
+    expect(query('[ngbDatepicker]')).not.toBeNull()
+  })
+
+  it('should restore a saved relative date value', async () => {
+    component.useDropdown = false
+    const atom = new CustomFieldQueryAtom([
+      4,
+      CustomFieldQueryOperator.Exact,
+      'in 2 months',
+    ])
+    component.selectionModel.addAtom(atom)
+    fixture.detectChanges()
+    await fixture.whenStable()
+    expect(component.getRelativeDate(atom)).toEqual({
+      amount: 2,
+      unit: 'in {n} months',
+    })
+    expect(
+      fixture.nativeElement.querySelector('input[aria-label="Amount"]').value
+    ).toBe('2')
+
+    const today = new CustomFieldQueryAtom([
+      4,
+      CustomFieldQueryOperator.Exact,
+      'today',
+    ])
+    expect(component.getRelativeDate(today)).toEqual({
+      amount: null,
+      unit: 'today',
+    })
+  })
+
+  describe('CustomFieldQueriesModel', () => {
+    let model: CustomFieldQueriesModel
+
+    beforeEach(() => {
+      model = new CustomFieldQueriesModel()
+    })
+
+    it('should initialize with empty queries', () => {
+      expect(model.queries).toEqual([])
+    })
+
+    it('should clear queries and fire event', () => {
+      const nextSpy = jest.spyOn(model.changed, 'next')
+      model.addExpression()
+      model.clear()
+      expect(model.queries).toEqual([])
+      expect(nextSpy).toHaveBeenCalledWith(model)
+    })
+
+    it('should clear queries without firing event', () => {
+      const nextSpy = jest.spyOn(model.changed, 'next')
+      model.addExpression()
+      model.clear(false)
+      expect(model.queries).toEqual([])
+      expect(nextSpy).not.toHaveBeenCalled()
+    })
+
+    it('should validate an empty model as invalid', () => {
+      expect(model.isValid()).toBeFalsy()
+    })
+
+    it('should validate a model with valid expression as valid', () => {
+      const expression = new CustomFieldQueryExpression()
+      const atom = new CustomFieldQueryAtom([1, 'icontains', 'test'])
+      const atom2 = new CustomFieldQueryAtom([2, 'icontains', 'test'])
+      const expression2 = new CustomFieldQueryExpression()
+      expression2.addAtom(atom)
+      expression2.addAtom(atom2)
+      expression.addExpression(expression2)
+      model.addExpression(expression)
+      expect(model.isValid()).toBeTruthy()
+    })
+
+    it('should validate a model with invalid expression as invalid', () => {
+      const expression = new CustomFieldQueryExpression()
+      model.addExpression(expression)
+      expect(model.isValid()).toBeFalsy()
+    })
+
+    it('should validate an atom with in or contains operator', () => {
+      const atom = new CustomFieldQueryAtom([1, 'in', '[1,2,3]'])
+      expect(model['validateAtom'].apply(null, [atom])).toBeTruthy()
+      atom.operator = 'contains'
+      atom.value = [1, 2, 3]
+      expect(model['validateAtom'].apply(null, [atom])).toBeTruthy()
+      atom.value = null
+      expect(model['validateAtom'].apply(null, [atom])).toBeFalsy()
+    })
+
+    it('should check if model is empty', () => {
+      expect(model.isEmpty()).toBeTruthy()
+      model.addExpression()
+      expect(model.isEmpty()).toBeTruthy()
+      const atom = new CustomFieldQueryAtom([1, 'icontains', 'test'])
+      model.addAtom(atom)
+      expect(model.isEmpty()).toBeFalsy()
+    })
+
+    it('should add an atom to the model', () => {
+      const atom = new CustomFieldQueryAtom([1, 'icontains', 'test'])
+      model.addAtom(atom)
+      expect(model.queries.length).toBe(1)
+      expect(
+        (model.queries[0] as CustomFieldQueryExpression).value.length
+      ).toBe(1)
+    })
+
+    it('should add an expression to the model, propagate changes', () => {
+      const expression = new CustomFieldQueryExpression()
+      model.addExpression(expression)
+      expect(model.queries.length).toBe(1)
+      const expression2 = new CustomFieldQueryExpression([
+        CustomFieldQueryLogicalOperator.And,
+        [
+          [1, 'icontains', 'test'],
+          [2, 'icontains', 'test'],
+        ],
+      ])
+      model.addExpression(expression2)
+      const nextSpy = jest.spyOn(model.changed, 'next')
+      expression2.changed.next(expression2)
+      expect(nextSpy).toHaveBeenCalled()
+    })
+
+    it('should remove an element from the model', () => {
+      const expression = new CustomFieldQueryExpression([
+        CustomFieldQueryLogicalOperator.And,
+        [
+          [1, 'icontains', 'test'],
+          [2, 'icontains', 'test'],
+        ],
+      ])
+      const atom = new CustomFieldQueryAtom([1, 'icontains', 'test'])
+      const expression2 = new CustomFieldQueryExpression([
+        CustomFieldQueryLogicalOperator.And,
+        [
+          [3, 'icontains', 'test'],
+          [4, 'icontains', 'test'],
+        ],
+      ])
+      expression.addAtom(atom)
+      expression2.addExpression(expression)
+      model.addExpression(expression2)
+      model.removeElement(atom)
+      expect(model.queries.length).toBe(1)
+      model.removeElement(expression2)
+    })
+
+    it('should fire changed event when an atom changes', () => {
+      const nextSpy = jest.spyOn(model.changed, 'next')
+      const atom = new CustomFieldQueryAtom([1, 'icontains', 'test'])
+      model.addAtom(atom)
+      atom.changed.next(atom)
+      expect(nextSpy).toHaveBeenCalledWith(model)
+    })
+
+    it('should complete changed subject when element is removed', () => {
+      const expression = new CustomFieldQueryExpression()
+      const atom = new CustomFieldQueryAtom([1, 'icontains', 'test'])
+      ;(expression.value as CustomFieldQueryElement[]).push(atom)
+      model.addExpression(expression)
+      const completeSpy = jest.spyOn(atom.changed, 'complete')
+      model.removeElement(atom)
+      expect(completeSpy).toHaveBeenCalled()
+    })
+
+    it('should subscribe to existing elements when queries are assigned', () => {
+      const expression = new CustomFieldQueryExpression()
+      const nextSpy = jest.spyOn(model.changed, 'next')
+      model.queries = [expression]
+      expression.changed.next(expression)
+      expect(nextSpy).toHaveBeenCalledWith(model)
+    })
+  })
+})

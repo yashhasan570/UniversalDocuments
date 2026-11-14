@@ -1,0 +1,49 @@
+# Docker Compose file for running universaldocuments from the Docker Hub.
+# This file contains everything universaldocuments needs to run.
+# Universal supports amd64, arm and arm64 hardware.
+#
+# All compose files of universaldocuments configure universaldocuments in the following way:
+#
+# - Universal is (re)started on system boot, if it was running before shutdown.
+# - Docker volumes for storing data are managed by Docker.
+# - Folders for importing and exporting files are created in the same directory
+#   as this file and mounted to the correct folders inside the container.
+# - Universal listens on port 8000.
+#
+# SQLite is used as the database. The SQLite file is stored in the data volume.
+#
+# To install and update universaldocuments with this file, do the following:
+#
+# - Copy this file as 'docker-compose.yml' and the files 'docker-compose.env'
+#   and '.env' into a folder.
+# - Run 'docker compose pull'.
+# - Run 'docker compose up -d'.
+#
+# For more extensive installation and update instructions, refer to the
+# documentation.
+services:
+  broker:
+    image: docker.io/valkey/valkey:9-alpine
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+  webserver:
+    image: ghcr.io/universaldocuments/universaldocuments:latest
+    restart: unless-stopped
+    depends_on:
+      - broker
+    ports:
+      - "8000:8000"
+    volumes:
+      - data:/usr/src/universaldocuments/data
+      - media:/usr/src/universaldocuments/media
+      - ./export:/usr/src/universaldocuments/export
+      - ./consume:/usr/src/universaldocuments/consume
+    env_file: docker-compose.env
+    environment:
+      UNIVERSALDOCUMENTS_REDIS: redis://broker:6379
+      UNIVERSALDOCUMENTS_DBENGINE: sqlite
+volumes:
+  data:
+  media:
+  redisdata:

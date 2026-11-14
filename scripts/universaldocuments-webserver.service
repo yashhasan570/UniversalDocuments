@@ -1,0 +1,29 @@
+[Unit]
+Description=Universal webserver
+After=network.target
+Wants=network.target
+Requires=redis.service
+#Requires=universaldocuments-webserver.socket
+
+[Service]
+User=universaldocuments
+Group=universaldocuments
+WorkingDirectory=/opt/universaldocuments/src
+
+Environment=GRANIAN_HOST=::
+Environment=GRANIAN_PORT=8000
+Environment=GRANIAN_WORKERS=1
+
+ExecStart=/bin/sh -c '\
+  # Host: GRANIAN_HOST -> UNIVERSALDOCUMENTS_BIND_ADDR -> default \
+  [ -n "$UNIVERSALDOCUMENTS_BIND_ADDR" ] && export GRANIAN_HOST=$UNIVERSALDOCUMENTS_BIND_ADDR; \
+  # Port: GRANIAN_PORT -> UNIVERSALDOCUMENTS_PORT -> default \
+  [ -n "$UNIVERSALDOCUMENTS_PORT" ] && export GRANIAN_PORT=$UNIVERSALDOCUMENTS_PORT; \
+  # Workers: GRANIAN_WORKERS -> UNIVERSALDOCUMENTS_WEBSERVER_WORKERS -> default \
+  [ -n "$UNIVERSALDOCUMENTS_WEBSERVER_WORKERS" ] && export GRANIAN_WORKERS=$UNIVERSALDOCUMENTS_WEBSERVER_WORKERS; \
+  # URL path prefix: only set if UNIVERSALDOCUMENTS_FORCE_SCRIPT_NAME exists \
+  [ -n "$UNIVERSALDOCUMENTS_FORCE_SCRIPT_NAME" ] && export GRANIAN_URL_PATH_PREFIX=$UNIVERSALDOCUMENTS_FORCE_SCRIPT_NAME; \
+  exec granian --interface asginl --ws --loop uvloop "universaldocuments.asgi:application"'
+
+[Install]
+WantedBy=multi-user.target

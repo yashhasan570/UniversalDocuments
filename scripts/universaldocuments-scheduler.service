@@ -1,0 +1,12 @@
+[Unit]
+Description=Universal Celery Beat
+Requires=redis.service
+
+[Service]
+User=universaldocuments
+Group=universaldocuments
+WorkingDirectory=/opt/universaldocuments/src
+ExecStart=celery --app universaldocuments beat --loglevel INFO
+
+[Install]
+WantedBy=multi-user.target

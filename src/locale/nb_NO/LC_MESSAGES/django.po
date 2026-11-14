@@ -1,0 +1,698 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: universaldocuments-ng\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-16 09:38+0000\n"
+"PO-Revision-Date: 2021-09-11 22:09\n"
+"Last-Translator: \n"
+"Language-Team: Norwegian Bokmal\n"
+"Language: nb_NO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: universaldocuments-ng\n"
+"X-Crowdin-Project-ID: 434940\n"
+"X-Crowdin-Language: nb\n"
+"X-Crowdin-File: /dev/src/locale/en_US/LC_MESSAGES/django.po\n"
+"X-Crowdin-File-ID: 54\n"
+
+#: documents/apps.py:10
+msgid "Documents"
+msgstr "Dokumenter"
+
+#: documents/models.py:32
+msgid "Any word"
+msgstr "Ett av ordene"
+
+#: documents/models.py:33
+msgid "All words"
+msgstr "Alle ord"
+
+#: documents/models.py:34
+msgid "Exact match"
+msgstr "Eksakt match"
+
+#: documents/models.py:35
+msgid "Regular expression"
+msgstr "Regular expression"
+
+#: documents/models.py:36
+msgid "Fuzzy word"
+msgstr "Fuzzy ord"
+
+#: documents/models.py:37
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: documents/models.py:41 documents/models.py:350 universaldocuments_mail/models.py:25
+#: universaldocuments_mail/models.py:117
+msgid "name"
+msgstr "navn"
+
+#: documents/models.py:45
+msgid "match"
+msgstr "match"
+
+#: documents/models.py:49
+msgid "matching algorithm"
+msgstr "matche-algoritme"
+
+#: documents/models.py:55
+msgid "is insensitive"
+msgstr "er insensitiv"
+
+#: documents/models.py:74 documents/models.py:120
+msgid "correspondent"
+msgstr "korrespondent"
+
+#: documents/models.py:75
+msgid "correspondents"
+msgstr "korrespondenter"
+
+#: documents/models.py:81
+msgid "color"
+msgstr "farge"
+
+#: documents/models.py:87
+msgid "is inbox tag"
+msgstr "er innboks-tagg"
+
+#: documents/models.py:89
+msgid "Marks this tag as an inbox tag: All newly consumed documents will be tagged with inbox tags."
+msgstr "Markerer denne taggen som en innboks-tagg: Alle dokumenter som er ny-behandlet vil bli merket med innboks-taggen."
+
+#: documents/models.py:94
+msgid "tag"
+msgstr "tagg"
+
+#: documents/models.py:95 documents/models.py:151
+msgid "tags"
+msgstr "tagger"
+
+#: documents/models.py:101 documents/models.py:133
+msgid "document type"
+msgstr "dokumenttype"
+
+#: documents/models.py:102
+msgid "document types"
+msgstr "dokumenttyper"
+
+#: documents/models.py:110
+msgid "Unencrypted"
+msgstr "Ukryptert"
+
+#: documents/models.py:111
+msgid "Encrypted with GNU Privacy Guard"
+msgstr "Kryptert med GNU Privacy Guard"
+
+#: documents/models.py:124
+msgid "title"
+msgstr "tittel"
+
+#: documents/models.py:137
+msgid "content"
+msgstr "innhold"
+
+#: documents/models.py:139
+msgid "The raw, text-only data of the document. This field is primarily used for searching."
+msgstr "Rå-tekst dataen fra dokumentet. Dette feltet brukes primært for søking."
+
+#: documents/models.py:144
+msgid "mime type"
+msgstr "mime-type"
+
+#: documents/models.py:155
+msgid "checksum"
+msgstr "sjekksum"
+
+#: documents/models.py:159
+msgid "The checksum of the original document."
+msgstr "Sjekksummen av det opprinnelige dokumentet."
+
+#: documents/models.py:163
+msgid "archive checksum"
+msgstr "arkivets sjekksum"
+
+#: documents/models.py:168
+msgid "The checksum of the archived document."
+msgstr "Sjekksummen til det arkiverte dokumentet."
+
+#: documents/models.py:172 documents/models.py:328
+msgid "created"
+msgstr "opprettet"
+
+#: documents/models.py:176
+msgid "modified"
+msgstr "endret"
+
+#: documents/models.py:180
+msgid "storage type"
+msgstr "lagringstype"
+
+#: documents/models.py:188
+msgid "added"
+msgstr "lagt til"
+
+#: documents/models.py:192
+msgid "filename"
+msgstr "filnavn"
+
+#: documents/models.py:198
+msgid "Current filename in storage"
+msgstr "Nåværende filnavn på disk"
+
+#: documents/models.py:202
+msgid "archive filename"
+msgstr "Arkivets filnavn"
+
+#: documents/models.py:208
+msgid "Current archive filename in storage"
+msgstr "Arkivets nåværende filnavn på disk"
+
+#: documents/models.py:212
+msgid "archive serial number"
+msgstr "arkivert serienummer"
+
+#: documents/models.py:217
+msgid "The position of this document in your physical document archive."
+msgstr "Dokumentets plass i ditt fysiske dokumentarkiv."
+
+#: documents/models.py:223
+msgid "document"
+msgstr "dokument"
+
+#: documents/models.py:224
+msgid "documents"
+msgstr "dokumenter"
+
+#: documents/models.py:311
+msgid "debug"
+msgstr "feilsøk"
+
+#: documents/models.py:312
+msgid "information"
+msgstr "informasjon"
+
+#: documents/models.py:313
+msgid "warning"
+msgstr "advarsel"
+
+#: documents/models.py:314
+msgid "error"
+msgstr "feil"
+
+#: documents/models.py:315
+msgid "critical"
+msgstr "kritisk"
+
+#: documents/models.py:319
+msgid "group"
+msgstr "gruppe"
+
+#: documents/models.py:322
+msgid "message"
+msgstr "melding"
+
+#: documents/models.py:325
+msgid "level"
+msgstr "nivå"
+
+#: documents/models.py:332
+msgid "log"
+msgstr "Logg"
+
+#: documents/models.py:333
+msgid "logs"
+msgstr "logger"
+
+#: documents/models.py:344 documents/models.py:401
+msgid "saved view"
+msgstr "lagret visning"
+
+#: documents/models.py:345
+msgid "saved views"
+msgstr "lagrede visninger"
+
+#: documents/models.py:348
+msgid "user"
+msgstr "bruker"
+
+#: documents/models.py:354
+msgid "show on dashboard"
+msgstr "vis på dashbordet"
+
+#: documents/models.py:357
+msgid "show in sidebar"
+msgstr "vis i sidepanelet"
+
+#: documents/models.py:361
+msgid "sort field"
+msgstr "sorter felt"
+
+#: documents/models.py:367
+msgid "sort reverse"
+msgstr "sorter omvendt"
+
+#: documents/models.py:373
+msgid "title contains"
+msgstr "tittelen inneholder"
+
+#: documents/models.py:374
+msgid "content contains"
+msgstr "innholdet inneholder"
+
+#: documents/models.py:375
+msgid "ASN is"
+msgstr "ASN er"
+
+#: documents/models.py:376
+msgid "correspondent is"
+msgstr "korrespondenten er"
+
+#: documents/models.py:377
+msgid "document type is"
+msgstr "dokumenttypen er"
+
+#: documents/models.py:378
+msgid "is in inbox"
+msgstr "er i innboksen"
+
+#: documents/models.py:379
+msgid "has tag"
+msgstr "har tagg"
+
+#: documents/models.py:380
+msgid "has any tag"
+msgstr "har en tag"
+
+#: documents/models.py:381
+msgid "created before"
+msgstr "opprettet før"
+
+#: documents/models.py:382
+msgid "created after"
+msgstr "opprettet etter"
+
+#: documents/models.py:383
+msgid "created year is"
+msgstr "opprettet år er"
+
+#: documents/models.py:384
+msgid "created month is"
+msgstr "opprettet måned er"
+
+#: documents/models.py:385
+msgid "created day is"
+msgstr "opprettet dag er"
+
+#: documents/models.py:386
+msgid "added before"
+msgstr "lagt til før"
+
+#: documents/models.py:387
+msgid "added after"
+msgstr "lagt til etter"
+
+#: documents/models.py:388
+msgid "modified before"
+msgstr "endret før"
+
+#: documents/models.py:389
+msgid "modified after"
+msgstr "endret etter"
+
+#: documents/models.py:390
+msgid "does not have tag"
+msgstr "har ikke tagg"
+
+#: documents/models.py:391
+msgid "does not have ASN"
+msgstr "har ikke ASN"
+
+#: documents/models.py:392
+msgid "title or content contains"
+msgstr "tittel eller innhold inneholder"
+
+#: documents/models.py:393
+msgid "fulltext query"
+msgstr "fulltekst spørring"
+
+#: documents/models.py:394
+msgid "more like this"
+msgstr "lignende dokumenter"
+
+#: documents/models.py:405
+msgid "rule type"
+msgstr "regeltype"
+
+#: documents/models.py:409
+msgid "value"
+msgstr "verdi"
+
+#: documents/models.py:415
+msgid "filter rule"
+msgstr "filtrer regel"
+
+#: documents/models.py:416
+msgid "filter rules"
+msgstr "filtrer regler"
+
+#: documents/serialisers.py:53
+#, python-format
+msgid "Invalid regular expression: %(error)s"
+msgstr "Ugyldig regular expression: %(error)s"
+
+#: documents/serialisers.py:177
+msgid "Invalid color."
+msgstr "Ugyldig farge."
+
+#: documents/serialisers.py:451
+#, python-format
+msgid "File type %(type)s not supported"
+msgstr "Filtypen %(type)s støttes ikke"
+
+#: documents/templates/index.html:22
+msgid "Universal-ng is loading..."
+msgstr "Universal-ng laster..."
+
+#: documents/templates/registration/logged_out.html:14
+msgid "Universal-ng signed out"
+msgstr "Universal-ng logget ut"
+
+#: documents/templates/registration/logged_out.html:45
+msgid "You have been successfully logged out. Bye!"
+msgstr "Du er nå logget ut. Hade!"
+
+#: documents/templates/registration/logged_out.html:46
+msgid "Sign in again"
+msgstr "Logg inn igjen"
+
+#: documents/templates/registration/login.html:15
+msgid "Universal-ng sign in"
+msgstr "Universal-ng logg inn"
+
+#: documents/templates/registration/login.html:47
+msgid "Please sign in."
+msgstr "Vennligst logg inn."
+
+#: documents/templates/registration/login.html:50
+msgid "Your username and password didn't match. Please try again."
+msgstr "Feil brukernavn og passord. Prøv på nytt."
+
+#: documents/templates/registration/login.html:53
+msgid "Username"
+msgstr "Brukernavn"
+
+#: documents/templates/registration/login.html:54
+msgid "Password"
+msgstr "Passord"
+
+#: documents/templates/registration/login.html:59
+msgid "Sign in"
+msgstr "Logg inn"
+
+#: universaldocuments/settings.py:303
+msgid "English (US)"
+msgstr "Engelsk (US)"
+
+#: universaldocuments/settings.py:304
+msgid "English (GB)"
+msgstr "Engelsk (GB)"
+
+#: universaldocuments/settings.py:305
+msgid "German"
+msgstr "Tysk"
+
+#: universaldocuments/settings.py:306
+msgid "Dutch"
+msgstr "Nederlandsk"
+
+#: universaldocuments/settings.py:307
+msgid "French"
+msgstr "Fransk"
+
+#: universaldocuments/settings.py:308
+msgid "Portuguese (Brazil)"
+msgstr "Portugisisk (Brasil)"
+
+#: universaldocuments/settings.py:309
+msgid "Portuguese"
+msgstr "Portuguese"
+
+#: universaldocuments/settings.py:310
+msgid "Italian"
+msgstr "Italiensk"
+
+#: universaldocuments/settings.py:311
+msgid "Romanian"
+msgstr "Rumensk"
+
+#: universaldocuments/settings.py:312
+msgid "Russian"
+msgstr "Russisk"
+
+#: universaldocuments/settings.py:313
+msgid "Spanish"
+msgstr "Spansk"
+
+#: universaldocuments/settings.py:314
+msgid "Polish"
+msgstr "Polsk"
+
+#: universaldocuments/settings.py:315
+msgid "Swedish"
+msgstr "Svensk"
+
+#: universaldocuments/urls.py:120
+msgid "Universal-ng administration"
+msgstr "Universal-ng administrasjon"
+
+#: universaldocuments_mail/admin.py:15
+msgid "Authentication"
+msgstr "Autentisering"
+
+#: universaldocuments_mail/admin.py:18
+msgid "Advanced settings"
+msgstr "Avanserte innstillinger"
+
+#: universaldocuments_mail/admin.py:37
+msgid "Filter"
+msgstr "Filter"
+
+#: universaldocuments_mail/admin.py:39
+msgid "Universal will only process mails that match ALL of the filters given below."
+msgstr "Universal vil kun behandle e-poster som samsvarer med ALLE filtrene som er gitt nedenfor."
+
+#: universaldocuments_mail/admin.py:49
+msgid "Actions"
+msgstr "Handlinger"
+
+#: universaldocuments_mail/admin.py:51
+msgid "The action applied to the mail. This action is only performed when documents were consumed from the mail. Mails without attachments will remain entirely untouched."
+msgstr "Handlingen som brukes på eposten. Denne handlingen blir bare utført når dokumenter blir behandlet fra e-posten. Mailer uten vedlegg forblir helt urørt."
+
+#: universaldocuments_mail/admin.py:58
+msgid "Metadata"
+msgstr "Metadata"
+
+#: universaldocuments_mail/admin.py:60
+msgid "Assign metadata to documents consumed from this rule automatically. If you do not assign tags, types or correspondents here, universaldocuments will still process all matching rules that you have defined."
+msgstr "Tilordne metadata til dokumenter som behandles fra denne regelen automatisk. Hvis du ikke tilordner tagger, typer eller korrespondenter her, vil Universal fremdeles behandle alle matchende regler som du har definert."
+
+#: universaldocuments_mail/apps.py:9
+msgid "Universal mail"
+msgstr "Universal epost"
+
+#: universaldocuments_mail/models.py:11
+msgid "mail account"
+msgstr "epostkonto"
+
+#: universaldocuments_mail/models.py:12
+msgid "mail accounts"
+msgstr "epostkontoer"
+
+#: universaldocuments_mail/models.py:19
+msgid "No encryption"
+msgstr "Ingen kryptering"
+
+#: universaldocuments_mail/models.py:20
+msgid "Use SSL"
+msgstr "Bruk SSL"
+
+#: universaldocuments_mail/models.py:21
+msgid "Use STARTTLS"
+msgstr "Bruk STARTTLS"
+
+#: universaldocuments_mail/models.py:29
+msgid "IMAP server"
+msgstr "IMAP tjener"
+
+#: universaldocuments_mail/models.py:33
+msgid "IMAP port"
+msgstr "IMAP port"
+
+#: universaldocuments_mail/models.py:36
+msgid "This is usually 143 for unencrypted and STARTTLS connections, and 993 for SSL connections."
+msgstr "Dette er vanligvis 143 for ukrypterte og STARTTLS-tilkoblinger, og 993 for SSL-tilkoblinger."
+
+#: universaldocuments_mail/models.py:40
+msgid "IMAP security"
+msgstr "IMAP sikkerhet"
+
+#: universaldocuments_mail/models.py:46
+msgid "username"
+msgstr "brukernavn"
+
+#: universaldocuments_mail/models.py:50
+msgid "password"
+msgstr "passord"
+
+#: universaldocuments_mail/models.py:54
+msgid "character set"
+msgstr "Tegnsett"
+
+#: universaldocuments_mail/models.py:57
+msgid "The character set to use when communicating with the mail server, such as 'UTF-8' or 'US-ASCII'."
+msgstr "Tegnsettet som skal brukes ved kommunikasjon med e-posttjeneren, som for eksempel 'UTF-8' eller 'US-ASCII'."
+
+#: universaldocuments_mail/models.py:68
+msgid "mail rule"
+msgstr "epost regel"
+
+#: universaldocuments_mail/models.py:69
+msgid "mail rules"
+msgstr "epost regler"
+
+#: universaldocuments_mail/models.py:75
+msgid "Only process attachments."
+msgstr "Bare behandle vedlegg."
+
+#: universaldocuments_mail/models.py:76
+msgid "Process all files, including 'inline' attachments."
+msgstr "Behandle alle filer, inkludert innebygde vedlegg."
+
+#: universaldocuments_mail/models.py:86
+msgid "Mark as read, don't process read mails"
+msgstr "Marker som lest, ikke behandle epost"
+
+#: universaldocuments_mail/models.py:87
+msgid "Flag the mail, don't process flagged mails"
+msgstr "Flagg-marker eposten, ikke behandle flaggede eposter"
+
+#: universaldocuments_mail/models.py:88
+msgid "Move to specified folder"
+msgstr "Flytt til angitt mappe"
+
+#: universaldocuments_mail/models.py:89
+msgid "Delete"
+msgstr "Slett"
+
+#: universaldocuments_mail/models.py:96
+msgid "Use subject as title"
+msgstr "Bruk emnet som tittel"
+
+#: universaldocuments_mail/models.py:97
+msgid "Use attachment filename as title"
+msgstr "Bruk vedleggets filnavn som tittel"
+
+#: universaldocuments_mail/models.py:107
+msgid "Do not assign a correspondent"
+msgstr "Ikke tildel en korrespondent"
+
+#: universaldocuments_mail/models.py:109
+msgid "Use mail address"
+msgstr "Bruk epostadresse"
+
+#: universaldocuments_mail/models.py:111
+msgid "Use name (or mail address if not available)"
+msgstr "Bruk navn (eller epostadresse hvis det ikke er tilgjengelig)"
+
+#: universaldocuments_mail/models.py:113
+msgid "Use correspondent selected below"
+msgstr "Bruk korrespondenten(e) markert nedenfor"
+
+#: universaldocuments_mail/models.py:121
+msgid "order"
+msgstr "rekkefølge"
+
+#: universaldocuments_mail/models.py:128
+msgid "account"
+msgstr "konto"
+
+#: universaldocuments_mail/models.py:132
+msgid "folder"
+msgstr "mappe"
+
+#: universaldocuments_mail/models.py:134
+msgid "Subfolders must be separated by dots."
+msgstr "Undermapper må være atskilt med punktum."
+
+#: universaldocuments_mail/models.py:138
+msgid "filter from"
+msgstr "filtrer fra"
+
+#: universaldocuments_mail/models.py:141
+msgid "filter subject"
+msgstr "filtrer emne"
+
+#: universaldocuments_mail/models.py:144
+msgid "filter body"
+msgstr "filtrer innhold"
+
+#: universaldocuments_mail/models.py:148
+msgid "filter attachment filename"
+msgstr "filtrer vedleggenes filnavn"
+
+#: universaldocuments_mail/models.py:150
+msgid "Only consume documents which entirely match this filename if specified. Wildcards such as *.pdf or *invoice* are allowed. Case insensitive."
+msgstr "Bare behandle dokumenter som matcher med dette filnavnet hvis angitt. Jokertegn som *.pdf eller *faktura* er tillatt. Skiller ikke på store eller små bokstaver."
+
+#: universaldocuments_mail/models.py:156
+msgid "maximum age"
+msgstr "maksimum alder"
+
+#: universaldocuments_mail/models.py:158
+msgid "Specified in days."
+msgstr "Spesifisert i dager."
+
+#: universaldocuments_mail/models.py:161
+msgid "attachment type"
+msgstr "vedlegg type"
+
+#: universaldocuments_mail/models.py:164
+msgid "Inline attachments include embedded images, so it's best to combine this option with a filename filter."
+msgstr "Innebygde vedlegg inkluderer innebygde bilder, så det er best å kombinere dette alternativet med et filter på filnavn."
+
+#: universaldocuments_mail/models.py:169
+msgid "action"
+msgstr "handling"
+
+#: universaldocuments_mail/models.py:175
+msgid "action parameter"
+msgstr "parametere for handlingen"
+
+#: universaldocuments_mail/models.py:177
+msgid "Additional parameter for the action selected above, i.e., the target folder of the move to folder action. Subfolders must be separated by dots."
+msgstr "Ytterligere parameter for handlingen valgt ovenfor, dvs. målmappen for flytting til mappehandling. Undermapper må separeres med punktum."
+
+#: universaldocuments_mail/models.py:184
+msgid "assign title from"
+msgstr "tilordne tittel fra"
+
+#: universaldocuments_mail/models.py:194
+msgid "assign this tag"
+msgstr "tilordne denne taggen"
+
+#: universaldocuments_mail/models.py:202
+msgid "assign this document type"
+msgstr "tilordne denne dokumenttypen"
+
+#: universaldocuments_mail/models.py:206
+msgid "assign correspondent from"
+msgstr "tilordne korrespondent fra"
+
+#: universaldocuments_mail/models.py:216
+msgid "assign this correspondent"
+msgstr "tilordne denne korrespondenten"
+

@@ -1,0 +1,134 @@
+import { Component, EventEmitter, Output, inject } from '@angular/core'
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms'
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
+import { first } from 'rxjs'
+import { BootstrapIconComponent } from 'src/app/components/common/bootstrap-icon/bootstrap-icon.component'
+import { CheckComponent } from 'src/app/components/common/input/check/check.component'
+import { DateComponent } from 'src/app/components/common/input/date/date.component'
+import { DocumentLinkComponent } from 'src/app/components/common/input/document-link/document-link.component'
+import { MonetaryComponent } from 'src/app/components/common/input/monetary/monetary.component'
+import { NumberComponent } from 'src/app/components/common/input/number/number.component'
+import { SelectComponent } from 'src/app/components/common/input/select/select.component'
+import { TextComponent } from 'src/app/components/common/input/text/text.component'
+import { UrlComponent } from 'src/app/components/common/input/url/url.component'
+import { BulkOperationResponse } from 'src/app/data/bulk-operation'
+import { CustomField, CustomFieldDataType } from 'src/app/data/custom-field'
+import {
+  DocumentSelectionQuery,
+  DocumentService,
+} from 'src/app/services/rest/document.service'
+import { TextAreaComponent } from '../../../common/input/textarea/textarea.component'
+
+@Component({
+  selector: 'pngx-custom-fields-bulk-edit-dialog',
+  templateUrl: './custom-fields-bulk-edit-dialog.component.html',
+  styleUrl: './custom-fields-bulk-edit-dialog.component.scss',
+  imports: [
+    CheckComponent,
+    DateComponent,
+    DocumentLinkComponent,
+    MonetaryComponent,
+    NumberComponent,
+    SelectComponent,
+    TextComponent,
+    UrlComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    BootstrapIconComponent,
+    TextAreaComponent,
+  ],
+})
+export class CustomFieldsBulkEditDialogComponent {
+  private activeModal = inject(NgbActiveModal)
+  private documentService = inject(DocumentService)
+
+  CustomFieldDataType = CustomFieldDataType
+
+  @Output()
+  succeeded = new EventEmitter<BulkOperationResponse>()
+
+  @Output()
+  failed = new EventEmitter()
+
+  public networkActive = false
+
+  public customFields: CustomField[] = []
+
+  private _fieldsToAdd: CustomField[] = [] // static object for change detection
+  public get fieldsToAdd() {
+    return this._fieldsToAdd
+  }
+
+  private _fieldsToAddIds: number[] = []
+  public get fieldsToAddIds() {
+    return this._fieldsToAddIds
+  }
+  public set fieldsToAddIds(ids: number[]) {
+    this._fieldsToAddIds = ids
+    this._fieldsToAdd = this.customFields.filter((field) =>
+      this._fieldsToAddIds.includes(field.id)
+    )
+    this.initForm()
+  }
+
+  public fieldsToRemoveIds: number[] = []
+
+  public form: FormGroup = new FormGroup({})
+
+  public selection: DocumentSelectionQuery = { documents: [] }
+
+  public selectionCount: number
+
+  public get documents(): number[] {
+    return this.selection.documents ?? []
+  }
+
+  public get documentCount(): number {
+    return this.selectionCount ?? this.documents.length
+  }
+
+  initForm() {
+    Object.keys(this.form.controls).forEach((key) => {
+      if (!this._fieldsToAddIds.includes(parseInt(key))) {
+        this.form.removeControl(key)
+      }
+    })
+    this._fieldsToAddIds.forEach((field_id) => {
+      this.form.addControl(field_id.toString(), new FormControl(null))
+    })
+  }
+
+  public save() {
+    if (this.networkActive) return
+    this.networkActive = true
+    this.documentService
+      .bulkEdit(this.selection, 'modify_custom_fields', {
+        add_custom_fields: this.form.value,
+        remove_custom_fields: this.fieldsToRemoveIds,
+      })
+      .pipe(first())
+      .subscribe({
+        next: (response) => {
+          this.activeModal.close()
+          this.succeeded.emit(response)
+        },
+        error: (error) => {
+          this.networkActive = false
+          this.failed.emit(error)
+        },
+      })
+  }
+
+  public cancel() {
+    this.activeModal.close()
+  }
+
+  public removeField(fieldId: number) {
+    this.fieldsToAddIds = this._fieldsToAddIds.filter((id) => id !== fieldId)
+  }
+}

@@ -1,0 +1,20 @@
+#!/command/with-contenv /usr/bin/bash
+# shellcheck shell=bash
+
+cd ${UNIVERSALDOCUMENTS_SRC_DIR}
+
+# Translate between things, preferring GRANIAN_
+export GRANIAN_HOST=${GRANIAN_HOST:-${UNIVERSALDOCUMENTS_BIND_ADDR:-"::"}}
+export GRANIAN_PORT=${GRANIAN_PORT:-${UNIVERSALDOCUMENTS_PORT:-8000}}
+export GRANIAN_WORKERS=${GRANIAN_WORKERS:-${UNIVERSALDOCUMENTS_WEBSERVER_WORKERS:-1}}
+
+# Only set GRANIAN_URL_PATH_PREFIX if UNIVERSALDOCUMENTS_FORCE_SCRIPT_NAME is set
+if [[ -n "${UNIVERSALDOCUMENTS_FORCE_SCRIPT_NAME}" ]]; then
+	export GRANIAN_URL_PATH_PREFIX=${UNIVERSALDOCUMENTS_FORCE_SCRIPT_NAME}
+fi
+
+if [[ -n "${USER_IS_NON_ROOT}" ]]; then
+	exec granian --interface asginl --ws --loop uvloop "universaldocuments.asgi:application"
+else
+	exec s6-setuidgid universaldocuments granian --interface asginl --ws --loop uvloop "universaldocuments.asgi:application"
+fi

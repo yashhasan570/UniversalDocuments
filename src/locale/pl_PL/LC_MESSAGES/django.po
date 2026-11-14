@@ -1,0 +1,2744 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: universaldocuments\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-13 17:09+0000\n"
+"PO-Revision-Date: 2026-11-13 17:12\n"
+"Last-Translator: \n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Crowdin-Project: universaldocuments\n"
+"X-Crowdin-Project-ID: 500308\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: /dev/src/locale/en_US/LC_MESSAGES/django.po\n"
+"X-Crowdin-File-ID: 14\n"
+
+#: documents/apps.py:8
+msgid "Documents"
+msgstr "Dokumenty"
+
+#: documents/filters.py:349
+msgid "Expected a date or a relative date such as \"today\" or \"in 30 days\"."
+msgstr ""
+
+#: documents/filters.py:527
+msgid "Value must be valid JSON."
+msgstr "Wartość musi być poprawnym JSON-em."
+
+#: documents/filters.py:548
+msgid "Invalid custom field query expression"
+msgstr "Nieprawidłowe wyrażenie zapytania pola niestandardowego"
+
+#: documents/filters.py:558
+msgid "Invalid expression list. Must be nonempty."
+msgstr "Nieprawidłowa lista wyrażeń. Nie może być pusta."
+
+#: documents/filters.py:579
+msgid "Invalid logical operator {op!r}"
+msgstr "Nieprawidłowy operator logiczny {op!r}"
+
+#: documents/filters.py:593
+msgid "Maximum number of query conditions exceeded."
+msgstr "Maksymalna liczba warunków zapytania została przekroczona."
+
+#: documents/filters.py:657
+msgid "{name!r} is not a valid custom field."
+msgstr "{name!r} nie jest prawidłowym polem niestandardowym."
+
+#: documents/filters.py:694
+msgid "{data_type} does not support query expr {expr!r}."
+msgstr "{data_type} nie obsługuje wyrażenia zapytania {expr!r}."
+
+#: documents/filters.py:815 documents/models.py:195
+msgid "Maximum nesting depth exceeded."
+msgstr "Przekroczono maksymalną głębokość zagnieżdżenia."
+
+#: documents/filters.py:1192
+msgid "Custom field not found"
+msgstr "Nie znaleziono pola niestandardowego"
+
+#: documents/models.py:43 documents/models.py:1188 documents/models.py:1236
+msgid "owner"
+msgstr "właściciel"
+
+#: documents/models.py:60 documents/models.py:1534
+msgid "None"
+msgstr "Brak"
+
+#: documents/models.py:61 documents/models.py:1535
+msgid "Any word"
+msgstr "Dowolne słowo"
+
+#: documents/models.py:62 documents/models.py:1536
+msgid "All words"
+msgstr "Wszystkie słowa"
+
+#: documents/models.py:63 documents/models.py:1537
+msgid "Exact match"
+msgstr "Dokładne dopasowanie"
+
+#: documents/models.py:64 documents/models.py:1538
+msgid "Regular expression"
+msgstr "Wyrażenie regularne"
+
+#: documents/models.py:65 documents/models.py:1539
+msgid "Fuzzy word"
+msgstr "Niejasne pojęcie"
+
+#: documents/models.py:66
+msgid "Automatic"
+msgstr "Automatyczne"
+
+#: documents/models.py:69 documents/models.py:709 documents/models.py:2161
+#: universaldocuments_mail/models.py:23 universaldocuments_mail/models.py:143
+msgid "name"
+msgstr "nazwa"
+
+#: documents/models.py:71 documents/models.py:1604
+msgid "match"
+msgstr "dopasowanie"
+
+#: documents/models.py:74 documents/models.py:1607
+msgid "matching algorithm"
+msgstr "algorytm dopasowania"
+
+#: documents/models.py:79 documents/models.py:1612
+msgid "is insensitive"
+msgstr "bez rozróżniania wielkości znaków"
+
+#: documents/models.py:102 documents/models.py:227
+msgid "correspondent"
+msgstr "korespondent"
+
+#: documents/models.py:103
+msgid "correspondents"
+msgstr "korespondenci"
+
+#: documents/models.py:114
+msgid "Parent"
+msgstr ""
+
+#: documents/models.py:117
+msgid "color"
+msgstr "kolor"
+
+#: documents/models.py:122
+msgid "is inbox tag"
+msgstr "jest tagiem skrzynki odbiorczej"
+
+#: documents/models.py:125
+msgid "Marks this tag as an inbox tag: All newly consumed documents will be tagged with inbox tags."
+msgstr "Zaznacza ten tag jako tag skrzynki odbiorczej: Wszystkie nowo przetworzone dokumenty będą oznaczone tagami skrzynki odbiorczej."
+
+#: documents/models.py:131
+msgid "tag"
+msgstr "znacznik"
+
+#: documents/models.py:132 documents/models.py:274
+msgid "tags"
+msgstr "tagi"
+
+#: documents/models.py:188
+msgid "Cannot set itself as parent."
+msgstr "Nie można ustawić siebie jako nadrzędnego."
+
+#: documents/models.py:192
+msgid "Cannot set parent to a descendant."
+msgstr "Nie można ustawić nadrzędnego jako potomnego."
+
+#: documents/models.py:202 documents/models.py:247
+msgid "document type"
+msgstr "typ dokumentu"
+
+#: documents/models.py:203
+msgid "document types"
+msgstr "typy dokumentów"
+
+#: documents/models.py:208
+msgid "path"
+msgstr "ścieżka"
+
+#: documents/models.py:212 documents/models.py:236
+msgid "storage path"
+msgstr "ścieżka zapisu"
+
+#: documents/models.py:213
+msgid "storage paths"
+msgstr "Ścieżki zapisu"
+
+#: documents/models.py:239
+msgid "title"
+msgstr "tytuł"
+
+#: documents/models.py:251 documents/models.py:1014
+msgid "content"
+msgstr "zawartość"
+
+#: documents/models.py:254
+msgid "The raw, text-only data of the document. This field is primarily used for searching."
+msgstr "Surowe, tekstowe dane dokumentu. To pole jest używane głównie do wyszukiwania."
+
+#: documents/models.py:268
+msgid "mime type"
+msgstr "mime type"
+
+#: documents/models.py:278
+msgid "checksum"
+msgstr "suma kontrolna"
+
+#: documents/models.py:282
+msgid "The checksum of the original document."
+msgstr "Suma kontrolna oryginalnego dokumentu."
+
+#: documents/models.py:286
+msgid "archive checksum"
+msgstr "suma kontrolna archiwum"
+
+#: documents/models.py:292
+msgid "The checksum of the archived document."
+msgstr "Suma kontrolna zarchiwizowanego dokumentu."
+
+#: documents/models.py:296
+msgid "page count"
+msgstr "liczba stron"
+
+#: documents/models.py:303
+msgid "The number of pages of the document."
+msgstr "Ilość stron dokumentu."
+
+#: documents/models.py:308 documents/models.py:1027 documents/models.py:1146
+#: documents/models.py:1208 documents/models.py:1336 documents/models.py:1395
+msgid "created"
+msgstr "utworzono"
+
+#: documents/models.py:314
+msgid "modified"
+msgstr "zmodyfikowano"
+
+#: documents/models.py:321
+msgid "added"
+msgstr "dodano"
+
+#: documents/models.py:328
+msgid "filename"
+msgstr "nazwa pliku"
+
+#: documents/models.py:334
+msgid "Current filename in storage"
+msgstr "Aktualna nazwa pliku w pamięci"
+
+#: documents/models.py:338
+msgid "archive filename"
+msgstr "nazwa pliku archiwum"
+
+#: documents/models.py:344
+msgid "Current archive filename in storage"
+msgstr "Aktualna nazwa pliku archiwum w pamięci"
+
+#: documents/models.py:348
+msgid "original filename"
+msgstr "oryginalna nazwa pliku"
+
+#: documents/models.py:354
+msgid "The original name of the file when it was uploaded"
+msgstr "Oryginalna nazwa pliku w momencie jego przesyłania"
+
+#: documents/models.py:361
+msgid "archive serial number"
+msgstr "numer seryjny archiwum"
+
+#: documents/models.py:371
+msgid "The position of this document in your physical document archive."
+msgstr "Pozycja tego dokumentu w archiwum dokumentów fizycznych."
+
+#: documents/models.py:381
+msgid "root document for this version"
+msgstr "dokument główny dla tej wersji"
+
+#: documents/models.py:385
+msgid "version index"
+msgstr "indeks wersji"
+
+#: documents/models.py:389
+msgid "Index of this version within the root document."
+msgstr "Indeks tej wersji w dokumencie głównym."
+
+#: documents/models.py:393
+msgid "version label"
+msgstr "etykieta wersji"
+
+#: documents/models.py:397
+msgid "Optional short label for a document version."
+msgstr "Opcjonalna, krótka etykieta dla wersji dokumentu."
+
+#: documents/models.py:402 documents/models.py:1038 documents/models.py:1069
+#: documents/models.py:1173 documents/models.py:2204
+msgid "document"
+msgstr "dokument"
+
+#: documents/models.py:403 documents/models.py:1279
+msgid "documents"
+msgstr "dokumenty"
+
+#: documents/models.py:628 documents/models.py:1142
+msgid "Archive"
+msgstr "Archiwum"
+
+#: documents/models.py:629
+msgid "Bank"
+msgstr ""
+
+#: documents/models.py:630
+msgid "Basket"
+msgstr ""
+
+#: documents/models.py:631
+msgid "Bell"
+msgstr ""
+
+#: documents/models.py:632
+msgid "Bookmark"
+msgstr ""
+
+#: documents/models.py:633
+msgid "Boxes"
+msgstr ""
+
+#: documents/models.py:634
+msgid "Briefcase"
+msgstr ""
+
+#: documents/models.py:635
+msgid "Building"
+msgstr ""
+
+#: documents/models.py:636
+msgid "Calculator"
+msgstr ""
+
+#: documents/models.py:637
+msgid "Calendar"
+msgstr ""
+
+#: documents/models.py:638
+msgid "Camera"
+msgstr ""
+
+#: documents/models.py:639
+msgid "Checklist"
+msgstr ""
+
+#: documents/models.py:640
+msgid "Cash"
+msgstr ""
+
+#: documents/models.py:641
+msgid "Chat"
+msgstr ""
+
+#: documents/models.py:642
+msgid "Check"
+msgstr ""
+
+#: documents/models.py:643
+msgid "Clipboard"
+msgstr ""
+
+#: documents/models.py:644
+msgid "Clock"
+msgstr ""
+
+#: documents/models.py:645
+msgid "Credit card"
+msgstr ""
+
+#: documents/models.py:646
+msgid "Download"
+msgstr ""
+
+#: documents/models.py:647
+msgid "Envelope"
+msgstr ""
+
+#: documents/models.py:648
+msgid "Warning"
+msgstr ""
+
+#: documents/models.py:649
+msgid "File"
+msgstr ""
+
+#: documents/models.py:650
+msgid "Checked file"
+msgstr ""
+
+#: documents/models.py:651
+msgid "Locked file"
+msgstr ""
+
+#: documents/models.py:652
+msgid "Medical file"
+msgstr ""
+
+#: documents/models.py:653
+msgid "Person file"
+msgstr ""
+
+#: documents/models.py:656
+msgid "Spreadsheet"
+msgstr ""
+
+#: documents/models.py:658
+msgid "Text file"
+msgstr ""
+
+#: documents/models.py:659
+msgid "Files"
+msgstr ""
+
+#: documents/models.py:660
+msgid "Folder"
+msgstr ""
+
+#: documents/models.py:661 universaldocuments_mail/admin.py:58
+msgid "Filter"
+msgstr "Filtry"
+
+#: documents/models.py:662
+msgid "Gear"
+msgstr ""
+
+#: documents/models.py:663
+msgid "Globe"
+msgstr ""
+
+#: documents/models.py:664
+msgid "Hash"
+msgstr ""
+
+#: documents/models.py:665
+msgid "Heart"
+msgstr ""
+
+#: documents/models.py:666
+msgid "House"
+msgstr ""
+
+#: documents/models.py:667
+msgid "Inbox"
+msgstr ""
+
+#: documents/models.py:668
+msgid "Journals"
+msgstr ""
+
+#: documents/models.py:669
+msgid "Task list"
+msgstr ""
+
+#: documents/models.py:670
+msgid "Newspaper"
+msgstr ""
+
+#: documents/models.py:671
+msgid "Attachment"
+msgstr ""
+
+#: documents/models.py:672
+msgid "People"
+msgstr ""
+
+#: documents/models.py:673
+msgid "Person"
+msgstr ""
+
+#: documents/models.py:674
+msgid "Printer"
+msgstr ""
+
+#: documents/models.py:675
+msgid "Receipt"
+msgstr ""
+
+#: documents/models.py:676
+msgid "Safe"
+msgstr ""
+
+#: documents/models.py:677
+msgid "Search"
+msgstr ""
+
+#: documents/models.py:678
+msgid "Send"
+msgstr ""
+
+#: documents/models.py:679
+msgid "Shop"
+msgstr ""
+
+#: documents/models.py:680
+msgid "Stack"
+msgstr ""
+
+#: documents/models.py:681
+msgid "Stars"
+msgstr ""
+
+#: documents/models.py:682
+msgid "Tag"
+msgstr ""
+
+#: documents/models.py:683 documents/models.py:698 documents/models.py:1882
+msgid "Tags"
+msgstr "Tagi"
+
+#: documents/models.py:684
+msgid "Telephone"
+msgstr ""
+
+#: documents/models.py:685
+msgid "Truck"
+msgstr ""
+
+#: documents/models.py:686
+msgid "Barcode"
+msgstr ""
+
+#: documents/models.py:687
+msgid "Wallet"
+msgstr ""
+
+#: documents/models.py:690
+msgid "Table"
+msgstr "Tabela"
+
+#: documents/models.py:691
+msgid "Small Cards"
+msgstr "Małe karty"
+
+#: documents/models.py:692
+msgid "Large Cards"
+msgstr "Duże karty"
+
+#: documents/models.py:695 documents/models.py:1881
+msgid "Title"
+msgstr "Tytuł"
+
+#: documents/models.py:696 documents/models.py:926 documents/models.py:1556
+msgid "Created"
+msgstr "Utworzono"
+
+#: documents/models.py:697 documents/models.py:1555
+msgid "Added"
+msgstr "Dodano"
+
+#: documents/models.py:699 documents/models.py:1883
+msgid "Correspondent"
+msgstr "Korespondent"
+
+#: documents/models.py:700
+msgid "Document Type"
+msgstr "Typ dokumentu"
+
+#: documents/models.py:701
+msgid "Storage Path"
+msgstr "Ścieżka zapisu"
+
+#: documents/models.py:702
+msgid "Note"
+msgstr "Notatka"
+
+#: documents/models.py:703
+msgid "Owner"
+msgstr "Właściciel"
+
+#: documents/models.py:704
+msgid "Shared"
+msgstr "Współdzielony"
+
+#: documents/models.py:705
+msgid "ASN"
+msgstr "ASN"
+
+#: documents/models.py:706
+msgid "Pages"
+msgstr "Strony"
+
+#: documents/models.py:712
+msgid "icon"
+msgstr ""
+
+#: documents/models.py:719
+msgid "sort field"
+msgstr "pole sortowania"
+
+#: documents/models.py:724
+msgid "sort reverse"
+msgstr "sortuj malejąco"
+
+#: documents/models.py:727
+msgid "View page size"
+msgstr "Pokaż rozmiar strony"
+
+#: documents/models.py:735
+msgid "View display mode"
+msgstr "Pokaż tryb wyświetlania"
+
+#: documents/models.py:742
+msgid "Document display fields"
+msgstr "Wyświetlane pola dokumentu"
+
+#: documents/models.py:749 documents/models.py:815
+msgid "saved view"
+msgstr "zapisany widok"
+
+#: documents/models.py:750
+msgid "saved views"
+msgstr "zapisane widoki"
+
+#: documents/models.py:758
+msgid "title contains"
+msgstr "tytuł zawiera"
+
+#: documents/models.py:759
+msgid "content contains"
+msgstr "zawartość zawiera"
+
+#: documents/models.py:760
+msgid "ASN is"
+msgstr "numer archiwum jest"
+
+#: documents/models.py:761
+msgid "correspondent is"
+msgstr "korespondentem jest"
+
+#: documents/models.py:762
+msgid "document type is"
+msgstr "typ dokumentu jest"
+
+#: documents/models.py:763
+msgid "is in inbox"
+msgstr "jest w skrzynce odbiorczej"
+
+#: documents/models.py:764
+msgid "has tag"
+msgstr "ma tag"
+
+#: documents/models.py:765
+msgid "has any tag"
+msgstr "ma dowolny tag"
+
+#: documents/models.py:766
+msgid "created before"
+msgstr "utworzony przed"
+
+#: documents/models.py:767
+msgid "created after"
+msgstr "utworzony po"
+
+#: documents/models.py:768
+msgid "created year is"
+msgstr "rok utworzenia to"
+
+#: documents/models.py:769
+msgid "created month is"
+msgstr "miesiąc utworzenia to"
+
+#: documents/models.py:770
+msgid "created day is"
+msgstr "dzień utworzenia to"
+
+#: documents/models.py:771
+msgid "added before"
+msgstr "dodany przed"
+
+#: documents/models.py:772
+msgid "added after"
+msgstr "dodany po"
+
+#: documents/models.py:773
+msgid "modified before"
+msgstr "zmodyfikowany przed"
+
+#: documents/models.py:774
+msgid "modified after"
+msgstr "zmodyfikowany po"
+
+#: documents/models.py:775
+msgid "does not have tag"
+msgstr "nie ma tagu"
+
+#: documents/models.py:776
+msgid "does not have ASN"
+msgstr "nie ma numeru archiwum"
+
+#: documents/models.py:777
+msgid "title or content contains"
+msgstr "tytuł lub zawartość zawiera"
+
+#: documents/models.py:778
+msgid "fulltext query"
+msgstr "zapytanie pełnotekstowe"
+
+#: documents/models.py:779
+msgid "more like this"
+msgstr "więcej podobnych"
+
+#: documents/models.py:780
+msgid "has tags in"
+msgstr "ma znaczniki w"
+
+#: documents/models.py:781
+msgid "ASN greater than"
+msgstr "ASN większy niż"
+
+#: documents/models.py:782
+msgid "ASN less than"
+msgstr "ASN mniejszy niż"
+
+#: documents/models.py:783
+msgid "storage path is"
+msgstr "ścieżką zapisu jest"
+
+#: documents/models.py:784
+msgid "has correspondent in"
+msgstr "ma nadawcę w"
+
+#: documents/models.py:785
+msgid "does not have correspondent in"
+msgstr "nie ma nadawcy w"
+
+#: documents/models.py:786
+msgid "has document type in"
+msgstr "ma typ dokumentu w"
+
+#: documents/models.py:787
+msgid "does not have document type in"
+msgstr "nie ma typu dokumentu w"
+
+#: documents/models.py:788
+msgid "has storage path in"
+msgstr "ma ścieżkę zapisu w"
+
+#: documents/models.py:789
+msgid "does not have storage path in"
+msgstr "nie ma ścieżki zapisu w"
+
+#: documents/models.py:790
+msgid "owner is"
+msgstr "właściciel to"
+
+#: documents/models.py:791
+msgid "has owner in"
+msgstr "ma właściciela w"
+
+#: documents/models.py:792
+msgid "does not have owner"
+msgstr "nie ma właściciela"
+
+#: documents/models.py:793
+msgid "does not have owner in"
+msgstr "nie ma właściciela w"
+
+#: documents/models.py:794
+msgid "has custom field value"
+msgstr "ma wartość pola dodatkowego"
+
+#: documents/models.py:795
+msgid "is shared by me"
+msgstr "jest udostępniony przeze mnie"
+
+#: documents/models.py:796
+msgid "has custom fields"
+msgstr "posiada pola dodatkowe"
+
+#: documents/models.py:797
+msgid "has custom field in"
+msgstr "ma dodatkowe pole w"
+
+#: documents/models.py:798
+msgid "does not have custom field in"
+msgstr "nie ma dodatkowego pola w"
+
+#: documents/models.py:799
+msgid "does not have custom field"
+msgstr "nie ma pola dodatkowego"
+
+#: documents/models.py:800
+msgid "custom fields query"
+msgstr "zapytanie o niestandardowe pola"
+
+#: documents/models.py:801
+msgid "created to"
+msgstr "utworzono w"
+
+#: documents/models.py:802
+msgid "created from"
+msgstr "utworzono z"
+
+#: documents/models.py:803
+msgid "added to"
+msgstr "dodano do"
+
+#: documents/models.py:804
+msgid "added from"
+msgstr "dodano z"
+
+#: documents/models.py:805
+msgid "mime type is"
+msgstr "typ MIME to"
+
+#: documents/models.py:806
+msgid "simple title search"
+msgstr "proste wyszukiwanie tytułów"
+
+#: documents/models.py:807
+msgid "simple text search"
+msgstr "proste wyszukiwanie tekstowe"
+
+#: documents/models.py:808
+msgid "has duplicates"
+msgstr ""
+
+#: documents/models.py:818
+msgid "rule type"
+msgstr "typ reguły"
+
+#: documents/models.py:820 documents/models.py:1077
+msgid "value"
+msgstr "wartość"
+
+#: documents/models.py:823
+msgid "filter rule"
+msgstr "reguła filtrowania"
+
+#: documents/models.py:824
+msgid "filter rules"
+msgstr "reguły filtrowania"
+
+#: documents/models.py:854 documents/models.py:1202
+msgid "Pending"
+msgstr "Oczekujące"
+
+#: documents/models.py:855 documents/models.py:933
+msgid "Started"
+msgstr ""
+
+#: documents/models.py:856
+msgid "Success"
+msgstr ""
+
+#: documents/models.py:857
+msgid "Failure"
+msgstr ""
+
+#: documents/models.py:858
+msgid "Revoked"
+msgstr ""
+
+#: documents/models.py:861
+msgid "Consume File"
+msgstr "Przetwórz plik"
+
+#: documents/models.py:862
+msgid "Train Classifier"
+msgstr "Wytrenuj klasyfikator"
+
+#: documents/models.py:863
+msgid "Sanity Check"
+msgstr ""
+
+#: documents/models.py:864
+msgid "Index Optimize"
+msgstr "Optymalizuj indeks"
+
+#: documents/models.py:865 documents/models.py:1551
+msgid "Mail Fetch"
+msgstr "Pobieranie E-mail"
+
+#: documents/models.py:866
+msgid "LLM Index"
+msgstr "Indeks LLM"
+
+#: documents/models.py:867
+msgid "Empty Trash"
+msgstr "Opróżnij kosz"
+
+#: documents/models.py:868
+msgid "Check Workflows"
+msgstr ""
+
+#: documents/models.py:869
+msgid "Bulk Update"
+msgstr "Masowa aktualizacja"
+
+#: documents/models.py:870
+msgid "Reprocess Document"
+msgstr ""
+
+#: documents/models.py:871
+msgid "Build Share Link"
+msgstr ""
+
+#: documents/models.py:872
+msgid "Bulk Delete"
+msgstr "Masowe usuwanie"
+
+#: documents/models.py:873
+msgid "Apply AI Suggestions"
+msgstr ""
+
+#: documents/models.py:882 documents/models.py:1545
+msgid "Scheduled"
+msgstr "Zaplanowane"
+
+#: documents/models.py:883 documents/models.py:1552
+msgid "Web UI"
+msgstr "Interfejs webowy"
+
+#: documents/models.py:884
+msgid "API Upload"
+msgstr "Przesyłanie przez API"
+
+#: documents/models.py:885
+msgid "Folder Consume"
+msgstr ""
+
+#: documents/models.py:886
+msgid "Email Consume"
+msgstr ""
+
+#: documents/models.py:887
+msgid "System"
+msgstr "System"
+
+#: documents/models.py:888 documents/models.py:1546
+msgid "Manual"
+msgstr ""
+
+#: documents/models.py:894
+msgid "Task ID"
+msgstr "ID zadania"
+
+#: documents/models.py:895
+msgid "Celery task ID"
+msgstr ""
+
+#: documents/models.py:901
+msgid "Task Type"
+msgstr "Typ zadania"
+
+#: documents/models.py:902
+msgid "The kind of work being performed"
+msgstr ""
+
+#: documents/models.py:909
+msgid "Trigger Source"
+msgstr ""
+
+#: documents/models.py:910
+msgid "What initiated this task"
+msgstr ""
+
+#: documents/models.py:919
+msgid "Status"
+msgstr "Status"
+
+#: documents/models.py:939
+msgid "Completed"
+msgstr "Zakończone"
+
+#: documents/models.py:947
+msgid "Duration (seconds)"
+msgstr "Czas trwania (w sekundach)"
+
+#: documents/models.py:948
+msgid "Elapsed time from start to completion"
+msgstr ""
+
+#: documents/models.py:954
+msgid "Wait Time (seconds)"
+msgstr "Czas oczekiwania (w sekundach)"
+
+#: documents/models.py:955
+msgid "Time from task creation to worker pickup"
+msgstr ""
+
+#: documents/models.py:962
+msgid "Input Data"
+msgstr "Dane wejściowe"
+
+#: documents/models.py:963
+msgid "Structured input parameters for the task"
+msgstr ""
+
+#: documents/models.py:969
+msgid "Result Data"
+msgstr "Dane wynikowe"
+
+#: documents/models.py:970
+msgid "Structured result data from task execution"
+msgstr ""
+
+#: documents/models.py:976
+msgid "Acknowledged"
+msgstr "Potwierdzono"
+
+#: documents/models.py:981
+msgid "Task"
+msgstr "Zadanie"
+
+#: documents/models.py:982
+msgid "Tasks"
+msgstr "Zadania"
+
+#: documents/models.py:1010
+msgid "Plain"
+msgstr ""
+
+#: documents/models.py:1011
+msgid "Markdown"
+msgstr ""
+
+#: documents/models.py:1016
+msgid "Note for the document"
+msgstr "Notatka dla dokumentu"
+
+#: documents/models.py:1023 documents/models.py:1129
+msgid "format"
+msgstr ""
+
+#: documents/models.py:1047
+msgid "user"
+msgstr "użytkownik"
+
+#: documents/models.py:1052
+msgid "note"
+msgstr "notatka"
+
+#: documents/models.py:1053
+msgid "notes"
+msgstr "notatki"
+
+#: documents/models.py:1073
+msgid "page"
+msgstr ""
+
+#: documents/models.py:1074
+msgid "Page of the original file, starting at 1"
+msgstr ""
+
+#: documents/models.py:1133
+msgid "document barcode"
+msgstr ""
+
+#: documents/models.py:1134
+msgid "document barcodes"
+msgstr ""
+
+#: documents/models.py:1143
+msgid "Original"
+msgstr "Oryginał"
+
+#: documents/models.py:1154 documents/models.py:1216
+#: universaldocuments_mail/models.py:75
+msgid "expiration"
+msgstr "wygaśnięcie"
+
+#: documents/models.py:1161 documents/models.py:1223
+msgid "slug"
+msgstr "adres URL"
+
+#: documents/models.py:1193
+msgid "share link"
+msgstr "udostępnij link"
+
+#: documents/models.py:1194
+msgid "share links"
+msgstr "udostępnij linki"
+
+#: documents/models.py:1203
+msgid "Processing"
+msgstr "Przetwarzane"
+
+#: documents/models.py:1204
+msgid "Ready"
+msgstr "Gotowe"
+
+#: documents/models.py:1205
+msgid "Failed"
+msgstr "Niepowodzenie"
+
+#: documents/models.py:1252
+msgid "size (bytes)"
+msgstr "rozmiar (bajty)"
+
+#: documents/models.py:1258
+msgid "last error"
+msgstr "ostatni błąd"
+
+#: documents/models.py:1265
+msgid "file path"
+msgstr "ścieżka pliku"
+
+#: documents/models.py:1271
+msgid "built at"
+msgstr "zbudowane w"
+
+#: documents/models.py:1284
+msgid "share link bundle"
+msgstr "udostępnij pakiet linków"
+
+#: documents/models.py:1285
+msgid "share link bundles"
+msgstr "udostępnij pakiety linków"
+
+#: documents/models.py:1288
+#, python-format
+msgid "Share link bundle %(slug)s"
+msgstr "Udostępnij link do pakietu %(slug)s"
+
+#: documents/models.py:1324
+msgid "String"
+msgstr "Ciąg znaków"
+
+#: documents/models.py:1325
+msgid "URL"
+msgstr "Adres URL"
+
+#: documents/models.py:1326
+msgid "Date"
+msgstr "Data"
+
+#: documents/models.py:1327
+msgid "Boolean"
+msgstr "Wartość logiczna"
+
+#: documents/models.py:1328
+msgid "Integer"
+msgstr "Liczba całkowita"
+
+#: documents/models.py:1329
+msgid "Float"
+msgstr "Liczba rzeczywista"
+
+#: documents/models.py:1330
+msgid "Monetary"
+msgstr "Format księgowy"
+
+#: documents/models.py:1331
+msgid "Document Link"
+msgstr "Link do dokumentu"
+
+#: documents/models.py:1332
+msgid "Select"
+msgstr "Lista"
+
+#: documents/models.py:1333
+msgid "Long Text"
+msgstr "Pełny tekst"
+
+#: documents/models.py:1345
+msgid "data type"
+msgstr "typ danych"
+
+#: documents/models.py:1352
+msgid "extra data"
+msgstr "dane dodatkowe"
+
+#: documents/models.py:1356
+msgid "Extra data for the custom field, such as select options"
+msgstr "Dodatkowe dane dla pola niestandardowego, takie jak opcje wyboru"
+
+#: documents/models.py:1362
+msgid "custom field"
+msgstr "pole dodatkowe"
+
+#: documents/models.py:1363
+msgid "custom fields"
+msgstr "pola dodatkowe"
+
+#: documents/models.py:1463
+msgid "custom field instance"
+msgstr "przypisane pole dodatkowe"
+
+#: documents/models.py:1464
+msgid "custom field instances"
+msgstr "przypisanych pól dodatkowych"
+
+#: documents/models.py:1542
+msgid "Consumption Started"
+msgstr "Rozpoczęto pobieranie"
+
+#: documents/models.py:1543
+msgid "Document Added"
+msgstr "Dodano dokument"
+
+#: documents/models.py:1544
+msgid "Document Updated"
+msgstr "Dokument zaktualizowano"
+
+#: documents/models.py:1549
+msgid "Consume Folder"
+msgstr "Folder pobierania"
+
+#: documents/models.py:1550
+msgid "Api Upload"
+msgstr "Przesyłanie przez API"
+
+#: documents/models.py:1557
+msgid "Modified"
+msgstr "Zmodyfikowano"
+
+#: documents/models.py:1558
+msgid "Custom Field"
+msgstr "Pole dodatkowe"
+
+#: documents/models.py:1561
+msgid "Workflow Trigger Type"
+msgstr "Typ wyzwalacza dla procesu"
+
+#: documents/models.py:1573
+msgid "filter path"
+msgstr "filtruj ścieżkę"
+
+#: documents/models.py:1578
+msgid "Only consume documents with a path that matches this if specified. Wildcards specified as * are allowed. Case insensitive."
+msgstr "Pobiera tylko dokumenty ze ścieżką, która pasuje do wyspecyfikowanej. Symbol * jest dozwolony. Wielkość liter bez znaczenia."
+
+#: documents/models.py:1585
+msgid "filter filename"
+msgstr "filtruj po nazwie pliku"
+
+#: documents/models.py:1590 universaldocuments_mail/models.py:200
+msgid "Only consume documents which entirely match this filename if specified. Wildcards such as *.pdf or *invoice* are allowed. Case insensitive."
+msgstr "Przetwarzaj tylko dokumenty, które całkowicie pasują do tej nazwy pliku, jeśli jest podana. Wzorce dopasowania jak *.pdf lub *faktura* są dozwolone. Wielkość liter nie jest rozróżniana."
+
+#: documents/models.py:1601
+msgid "filter documents from this mail rule"
+msgstr "filtruj dokumenty z tej reguły pocztowej"
+
+#: documents/models.py:1617
+msgid "has these tag(s)"
+msgstr "posiada wskazane tag(i)"
+
+#: documents/models.py:1624
+msgid "has all of these tag(s)"
+msgstr "Zawiera wszystkie podane tagi"
+
+#: documents/models.py:1631
+msgid "does not have these tag(s)"
+msgstr "Nie zawiera żadnego z podanych tagów"
+
+#: documents/models.py:1639
+msgid "has this document type"
+msgstr "posiada wskazany typ dokumentu"
+
+#: documents/models.py:1646
+msgid "has one of these document types"
+msgstr "posiada jeden z tych typów dokumentów"
+
+#: documents/models.py:1653
+msgid "does not have these document type(s)"
+msgstr "Nie posiada typów dokumentów"
+
+#: documents/models.py:1661
+msgid "has this correspondent"
+msgstr "posiada wskazanego nadawcę"
+
+#: documents/models.py:1668
+msgid "does not have these correspondent(s)"
+msgstr "nie posiada nadawcy (-ów)"
+
+#: documents/models.py:1675
+msgid "has one of these correspondents"
+msgstr "posiada jednego z tych nadawców"
+
+#: documents/models.py:1683
+msgid "has this storage path"
+msgstr "ma tę ścieżkę zapisu"
+
+#: documents/models.py:1690
+msgid "has one of these storage paths"
+msgstr "posiada jedną ze ścieżek przechowywania"
+
+#: documents/models.py:1697
+msgid "does not have these storage path(s)"
+msgstr "nie ma tej ścieżki/ścieżek zapisu"
+
+#: documents/models.py:1701
+msgid "filter custom field query"
+msgstr "filtruj zapytanie pola niestandardowego"
+
+#: documents/models.py:1704
+msgid "JSON-encoded custom field query expression."
+msgstr "Niestandardowe wyrażenie zapytania pola zakodowane w formacie JSON."
+
+#: documents/models.py:1708
+msgid "schedule offset days"
+msgstr "liczba dni przesunięcia harmonogramu"
+
+#: documents/models.py:1711
+msgid "The number of days to offset the schedule trigger by."
+msgstr "Liczba dni, o którą należy przesunąć wyzwalacz harmonogramu."
+
+#: documents/models.py:1716
+msgid "schedule is recurring"
+msgstr "harmonogram jest cykliczny"
+
+#: documents/models.py:1719
+msgid "If the schedule should be recurring."
+msgstr "Czy harmonogram ma być cykliczny."
+
+#: documents/models.py:1724
+msgid "schedule recurring delay in days"
+msgstr "opóźnienie cyklicznego harmonogramu w dniach"
+
+#: documents/models.py:1728
+msgid "The number of days between recurring schedule triggers."
+msgstr "Liczba dni między kolejnymi wyzwalaczami cyklicznego harmonogramu."
+
+#: documents/models.py:1733
+msgid "schedule date field"
+msgstr "pole daty harmonogramu"
+
+#: documents/models.py:1738
+msgid "The field to check for a schedule trigger."
+msgstr "Pole do sprawdzenia pod kątem wyzwalacza harmonogramu."
+
+#: documents/models.py:1747
+msgid "schedule date custom field"
+msgstr ""
+
+#: documents/models.py:1751
+msgid "workflow trigger"
+msgstr "wyzwalacz procesu"
+
+#: documents/models.py:1752
+msgid "workflow triggers"
+msgstr "wyzwalacze procesu"
+
+#: documents/models.py:1760
+msgid "email subject"
+msgstr "temat wiadomości e-mail"
+
+#: documents/models.py:1764
+msgid "The subject of the email, can include some placeholders, see documentation."
+msgstr "Temat wiadomości e-mail, może zawierać znaczniki zastępcze; zobacz dokumentację."
+
+#: documents/models.py:1770
+msgid "email body"
+msgstr "treść e-maila"
+
+#: documents/models.py:1773
+msgid "The body (message) of the email, can include some placeholders, see documentation."
+msgstr "Treść (wiadomość) e-maila, może zawierać znaczniki zastępcze; zobacz dokumentację."
+
+#: documents/models.py:1779
+msgid "emails to"
+msgstr "adresaci e-maila"
+
+#: documents/models.py:1782
+msgid "The destination email addresses, comma separated."
+msgstr "Docelowe adresy e-mail oddzielone przecinkami."
+
+#: documents/models.py:1788
+msgid "include document in email"
+msgstr "dołącz dokument do e-maila"
+
+#: documents/models.py:1799
+msgid "webhook url"
+msgstr "adres URL webhooka"
+
+#: documents/models.py:1802
+msgid "The destination URL for the notification."
+msgstr "Docelowy adres URL powiadomienia."
+
+#: documents/models.py:1807
+msgid "use parameters"
+msgstr "użyj parametrów"
+
+#: documents/models.py:1812
+msgid "send as JSON"
+msgstr "wyślij jako JSON"
+
+#: documents/models.py:1816
+msgid "webhook parameters"
+msgstr "parametry webhooka"
+
+#: documents/models.py:1819
+msgid "The parameters to send with the webhook URL if body not used."
+msgstr "Parametry wysyłane z adresem URL webhooka, gdy treść nie jest używana."
+
+#: documents/models.py:1823
+msgid "webhook body"
+msgstr "treść webhooka"
+
+#: documents/models.py:1826
+msgid "The body to send with the webhook URL if parameters not used."
+msgstr "Treść wysyłana z adresem URL webhooka, gdy parametry nie są używane."
+
+#: documents/models.py:1830
+msgid "webhook headers"
+msgstr "nagłówki webhooka"
+
+#: documents/models.py:1833
+msgid "The headers to send with the webhook URL."
+msgstr "Nagłówki wysyłane z adresem URL webhooka."
+
+#: documents/models.py:1838
+msgid "include document in webhook"
+msgstr "dołącz dokument w webhooku"
+
+#: documents/models.py:1849
+msgid "Assignment"
+msgstr "Przypisanie"
+
+#: documents/models.py:1853
+msgid "Removal"
+msgstr "Usuwanie"
+
+#: documents/models.py:1857 documents/templates/account/password_reset.html:15
+msgid "Email"
+msgstr "Adres e-mail"
+
+#: documents/models.py:1861
+msgid "Webhook"
+msgstr "Webhook"
+
+#: documents/models.py:1865
+msgid "Password removal"
+msgstr "Usuwanie hasła"
+
+#: documents/models.py:1869
+msgid "Move to trash"
+msgstr "Przenieś do kosza"
+
+#: documents/models.py:1873
+msgid "Remote OCR"
+msgstr ""
+
+#: documents/models.py:1877
+msgid "Apply AI suggestions"
+msgstr ""
+
+#: documents/models.py:1884
+msgid "Document type"
+msgstr ""
+
+#: documents/models.py:1885
+msgid "Storage path"
+msgstr ""
+
+#: documents/models.py:1886
+msgid "Created date"
+msgstr ""
+
+#: documents/models.py:1889
+msgid "Workflow Action Type"
+msgstr "Typ akcji w procesie"
+
+#: documents/models.py:1894 documents/models.py:2163
+#: universaldocuments_mail/models.py:145
+msgid "order"
+msgstr "kolejność"
+
+#: documents/models.py:1897
+msgid "assign title"
+msgstr "przypisz tytuł"
+
+#: documents/models.py:1901
+msgid "Assign a document title, must  be a Jinja2 template, see documentation."
+msgstr "Przypisz tytuł dokumentu, musi być szablonem Jinja2, zobacz dokumentację."
+
+#: documents/models.py:1909 universaldocuments_mail/models.py:274
+msgid "assign this tag"
+msgstr "przypisz ten tag"
+
+#: documents/models.py:1918 universaldocuments_mail/models.py:282
+msgid "assign this document type"
+msgstr "przypisz ten typ dokumentu"
+
+#: documents/models.py:1927 universaldocuments_mail/models.py:296
+msgid "assign this correspondent"
+msgstr "przypisz tego korespondenta"
+
+#: documents/models.py:1936
+msgid "assign this storage path"
+msgstr "przypisz tą ścieżkę zapisu"
+
+#: documents/models.py:1945
+msgid "assign this owner"
+msgstr "przypisz tego właściciela"
+
+#: documents/models.py:1952
+msgid "grant view permissions to these users"
+msgstr "nadaj tym użytkownikom uprawnienia do przeglądania"
+
+#: documents/models.py:1959
+msgid "grant view permissions to these groups"
+msgstr "nadaj tym grupom uprawnienia do przeglądania"
+
+#: documents/models.py:1966
+msgid "grant change permissions to these users"
+msgstr "nadaj tym użytkownikom uprawnienia do zmiany"
+
+#: documents/models.py:1973
+msgid "grant change permissions to these groups"
+msgstr "nadaj tym grupom uprawnienia do zmiany"
+
+#: documents/models.py:1980
+msgid "assign these custom fields"
+msgstr "przypisz te pola dodatkowe"
+
+#: documents/models.py:1984
+msgid "custom field values"
+msgstr "wartości pól niestandardowych"
+
+#: documents/models.py:1988
+msgid "Optional values to assign to the custom fields."
+msgstr "Opcjonalne wartości do przypisania polom niestandardowym."
+
+#: documents/models.py:1997
+msgid "remove these tag(s)"
+msgstr "usuń ten tag/te tagi"
+
+#: documents/models.py:2002
+msgid "remove all tags"
+msgstr "usuń wszystkie tagi"
+
+#: documents/models.py:2009
+msgid "remove these document type(s)"
+msgstr "usuń te typy dokumentów"
+
+#: documents/models.py:2014
+msgid "remove all document types"
+msgstr "usuń wszystkie typy dokumentów"
+
+#: documents/models.py:2021
+msgid "remove these correspondent(s)"
+msgstr "usuń tych nadawców"
+
+#: documents/models.py:2026
+msgid "remove all correspondents"
+msgstr "usuń wszystkich nadawców"
+
+#: documents/models.py:2033
+msgid "remove these storage path(s)"
+msgstr "usuń te ścieżki zapisu"
+
+#: documents/models.py:2038
+msgid "remove all storage paths"
+msgstr "usuń wszystkie ścieżki zapisu"
+
+#: documents/models.py:2045
+msgid "remove these owner(s)"
+msgstr "usuń tych właścicieli"
+
+#: documents/models.py:2050
+msgid "remove all owners"
+msgstr "usuń wszystkich właścicieli"
+
+#: documents/models.py:2057
+msgid "remove view permissions for these users"
+msgstr "usuń uprawnienia do wyświetlania dla tych użytkowników"
+
+#: documents/models.py:2064
+msgid "remove view permissions for these groups"
+msgstr "usuń uprawnienia do wyświetlania dla tych grup"
+
+#: documents/models.py:2071
+msgid "remove change permissions for these users"
+msgstr "usuń uprawnienia do zmiany dla tych użytkowników"
+
+#: documents/models.py:2078
+msgid "remove change permissions for these groups"
+msgstr "usuń uprawnienia do zmiany dla tych grup"
+
+#: documents/models.py:2083
+msgid "remove all permissions"
+msgstr "usuń wszystkie uprawnienia"
+
+#: documents/models.py:2090
+msgid "remove these custom fields"
+msgstr "usuń te pola dodatkowe"
+
+#: documents/models.py:2095
+msgid "remove all custom fields"
+msgstr "usuń wszystkie pola dodatkowe"
+
+#: documents/models.py:2104
+msgid "email"
+msgstr "adres e-mail"
+
+#: documents/models.py:2113
+msgid "webhook"
+msgstr "webhook"
+
+#: documents/models.py:2117
+msgid "passwords"
+msgstr "hasła"
+
+#: documents/models.py:2121
+msgid "Passwords to try when removing PDF protection. Separate with commas or new lines."
+msgstr "Hasła do wypróbowania podczas usuwania zabezpieczeń plików PDF. Oddziel je przecinkami lub nowymi wierszami."
+
+#: documents/models.py:2126
+msgid "AI suggestion fields"
+msgstr ""
+
+#: documents/models.py:2130
+msgid "Which of the AI-suggested fields to apply to the document."
+msgstr ""
+
+#: documents/models.py:2135
+msgid "create missing objects"
+msgstr ""
+
+#: documents/models.py:2138
+msgid "Create suggested tags, correspondents, document types and storage paths that do not already exist instead of skipping them."
+msgstr ""
+
+#: documents/models.py:2144
+msgid "overwrite existing values"
+msgstr ""
+
+#: documents/models.py:2147
+msgid "Apply suggestions even if the document already has a value for that field. Tags are always added to, never replaced."
+msgstr ""
+
+#: documents/models.py:2153
+msgid "workflow action"
+msgstr "akcja procesu"
+
+#: documents/models.py:2154
+msgid "workflow actions"
+msgstr "akcje procesu"
+
+#: documents/models.py:2169
+msgid "triggers"
+msgstr "wyzwalacze"
+
+#: documents/models.py:2176
+msgid "actions"
+msgstr "akcje"
+
+#: documents/models.py:2179 universaldocuments_mail/models.py:154
+msgid "enabled"
+msgstr "włączony"
+
+#: documents/models.py:2190
+msgid "workflow"
+msgstr "procesy"
+
+#: documents/models.py:2194
+msgid "workflow trigger type"
+msgstr "typ wyzwalacza przepływu pracy"
+
+#: documents/models.py:2208
+msgid "date run"
+msgstr "data uruchomienia"
+
+#: documents/models.py:2214
+msgid "workflow run"
+msgstr "uruchomienie przepływu pracy"
+
+#: documents/models.py:2215
+msgid "workflow runs"
+msgstr "uruchomienia przepływu pracy"
+
+#: documents/serialisers.py:483 documents/serialisers.py:844
+#: documents/serialisers.py:2893 documents/views.py:356 documents/views.py:622
+#: documents/views.py:2761 universaldocuments_mail/serialisers.py:156
+msgid "Insufficient permissions."
+msgstr "Niewystarczające uprawnienia."
+
+#: documents/serialisers.py:676
+msgid "Invalid color."
+msgstr "Nieprawidłowy kolor."
+
+#: documents/serialisers.py:2360
+#, python-format
+msgid "File type %(type)s not supported"
+msgstr "Typ pliku %(type)s nie jest obsługiwany"
+
+#: documents/serialisers.py:2404
+#, python-format
+msgid "Custom field id must be an integer: %(id)s"
+msgstr "Identyfikator pola niestandardowego musi być liczbą całkowitą: %(id)s"
+
+#: documents/serialisers.py:2411
+#, python-format
+msgid "Custom field with id %(id)s does not exist"
+msgstr "Pole niestandardowe z id %(id)s nie istnieje"
+
+#: documents/serialisers.py:2428 documents/serialisers.py:2438
+msgid "Custom fields must be a list of integers or an object mapping ids to values."
+msgstr "Pola niestandardowe muszą być listą liczb całkowitych lub obiektem mapującym identyfikatory na wartości."
+
+#: documents/serialisers.py:2433
+msgid "Some custom fields don't exist or were specified twice."
+msgstr "Niektóre niestandardowe pola nie istnieją lub zostały określone dwukrotnie."
+
+#: documents/serialisers.py:2580
+msgid "Invalid variable detected."
+msgstr "Wykryto nieprawidłową zmienną."
+
+#: documents/serialisers.py:2949
+msgid "Duplicate document identifiers are not allowed."
+msgstr "Nie dopuszcza się powielania identyfikatorów dokumentów."
+
+#: documents/serialisers.py:2979 documents/views.py:4794
+#, python-format
+msgid "Documents not found: %(ids)s"
+msgstr "Nie znaleziono dokumentów: %(ids)s"
+
+#: documents/templates/account/account_inactive.html:5
+msgid "Universal Documents account inactive"
+msgstr "Konto Universal Documents nieaktywne"
+
+#: documents/templates/account/account_inactive.html:9
+msgid "Account inactive."
+msgstr "Konto nieaktywne."
+
+#: documents/templates/account/account_inactive.html:14
+msgid "This account is inactive."
+msgstr "To konto jest nieaktywne."
+
+#: documents/templates/account/account_inactive.html:16
+msgid "Return to login"
+msgstr "Powrót do logowania"
+
+#: documents/templates/account/email/base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr "Witaj z %(site_name)s!"
+
+#: documents/templates/account/email/base_message.txt:5
+#, python-format
+msgid "Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr "Dziękujemy za korzystanie z %(site_name)s\n"
+"%(site_domain)s"
+
+#: documents/templates/account/login.html:5
+msgid "Universal Documents sign in"
+msgstr "Logowanie do Universal Documents"
+
+#: documents/templates/account/login.html:10
+msgid "Please sign in."
+msgstr "Proszę się zalogować."
+
+#: documents/templates/account/login.html:12
+msgid "Don't have an account yet?"
+msgstr "Nie masz jeszcze konta?"
+
+#: documents/templates/account/login.html:12
+#: documents/templates/account/signup.html:43
+#: documents/templates/socialaccount/signup.html:29
+msgid "Sign up"
+msgstr "Zarejestruj się"
+
+#: documents/templates/account/login.html:25
+#: documents/templates/account/signup.html:22
+#: documents/templates/socialaccount/signup.html:15
+msgid "Username"
+msgstr "Użytkownik"
+
+#: documents/templates/account/login.html:26
+#: documents/templates/account/signup.html:24
+msgid "Password"
+msgstr "Hasło"
+
+#: documents/templates/account/login.html:36
+#: documents/templates/account/signup.html:11
+#: documents/templates/mfa/authenticate.html:23
+msgid "Sign in"
+msgstr "Zaloguj się"
+
+#: documents/templates/account/login.html:40
+msgid "Forgot your password?"
+msgstr "Nie pamiętasz hasła?"
+
+#: documents/templates/account/login.html:51
+#: documents/templates/account/signup.html:57
+msgid "or sign in via"
+msgstr "lub zaloguj się przez"
+
+#: documents/templates/account/password_reset.html:5
+msgid "Universal Documents reset password request"
+msgstr "Universal Documents prośba o reset hasła"
+
+#: documents/templates/account/password_reset.html:9
+msgid "Enter your email address below, and we'll email instructions for setting a new one."
+msgstr "Wprowadź poniżej swój adres e-mail, wyślemy instrukcje do ustawienia nowego."
+
+#: documents/templates/account/password_reset.html:12
+msgid "An error occurred. Please try again."
+msgstr "Wystąpił błąd. Spróbuj ponownie."
+
+#: documents/templates/account/password_reset.html:21
+msgid "Send me instructions!"
+msgstr "Wyślij mi instrukcje!"
+
+#: documents/templates/account/password_reset_done.html:5
+msgid "Universal Documents reset password sent"
+msgstr "Wysłano żądanie resetu hasła w aplikacji Universal Documents"
+
+#: documents/templates/account/password_reset_done.html:9
+msgid "Check your inbox."
+msgstr "Sprawdź swoją pocztę."
+
+#: documents/templates/account/password_reset_done.html:13
+msgid "We've emailed you instructions for setting your password. You should receive the email shortly!"
+msgstr "Wysłaliśmy Ci instrukcje dotyczące ustawienia hasła. Wkrótce otrzymasz e-mail!"
+
+#: documents/templates/account/password_reset_from_key.html:5
+msgid "Universal Documents reset password confirmation"
+msgstr "Potwierdzenie resetowania hasła w aplikacji Universal Documents"
+
+#: documents/templates/account/password_reset_from_key.html:9
+msgid "Set a new password."
+msgstr "Ustaw nowe hasło."
+
+#: documents/templates/account/password_reset_from_key.html:15
+msgid "request a new password reset"
+msgstr "poproś o reset hasła"
+
+#: documents/templates/account/password_reset_from_key.html:17
+msgid "New Password"
+msgstr "Nowe hasło"
+
+#: documents/templates/account/password_reset_from_key.html:18
+msgid "Confirm Password"
+msgstr "Potwierdź hasło"
+
+#: documents/templates/account/password_reset_from_key.html:28
+msgid "Change my password"
+msgstr "Zmień hasło"
+
+#: documents/templates/account/password_reset_from_key_done.html:5
+msgid "Universal Documents reset password complete"
+msgstr "Universal Documents zakończył resetowanie hasła"
+
+#: documents/templates/account/password_reset_from_key_done.html:9
+msgid "Password reset complete."
+msgstr "Resetowanie hasła zakończone."
+
+#: documents/templates/account/password_reset_from_key_done.html:14
+msgid "Your new password has been set. You can now"
+msgstr "Twoje nowe hasło zostało ustawione."
+
+#: documents/templates/account/password_reset_from_key_done.html:14
+msgid "log in"
+msgstr "zaloguj się"
+
+#: documents/templates/account/signup.html:5
+msgid "Universal Documents sign up"
+msgstr "Rejestracja w Universal Documents"
+
+#: documents/templates/account/signup.html:11
+msgid "Already have an account?"
+msgstr "Masz już konto?"
+
+#: documents/templates/account/signup.html:19
+msgid "Note: This is the first user account for this installation and will be granted superuser privileges."
+msgstr "Uwaga: To jest pierwsze konto użytkownika w tej instalacji i otrzyma uprawnienia superużytkownika."
+
+#: documents/templates/account/signup.html:23
+#: documents/templates/socialaccount/signup.html:16
+msgid "Email (optional)"
+msgstr "Adres e-mail (opcjonalny)"
+
+#: documents/templates/account/signup.html:25
+msgid "Password (again)"
+msgstr "Hasło (powtórz)"
+
+#: documents/templates/index.html:61
+msgid "Universal Documents is loading..."
+msgstr "Wczytywanie Universal Documents..."
+
+#: documents/templates/index.html:62
+msgid "Still here?! Hmm, something might be wrong."
+msgstr "Nadal tutaj?! Hmm, coś może być nie tak."
+
+#: documents/templates/index.html:62
+msgid "Here's a link to the docs."
+msgstr "Oto link do dokumentacji."
+
+#: documents/templates/mfa/authenticate.html:7
+msgid "Universal Documents Two-Factor Authentication"
+msgstr "Uwierzytelnianie dwuskładnikowe Universal Documents"
+
+#: documents/templates/mfa/authenticate.html:12
+msgid "Your account is protected by two-factor authentication. Please enter an authenticator code:"
+msgstr "Twoje konto jest chronione przez uwierzytelnianie dwuskładnikowe. Wprowadź kod uwierzytelniający:"
+
+#: documents/templates/mfa/authenticate.html:17
+msgid "Code"
+msgstr "Kod"
+
+#: documents/templates/mfa/authenticate.html:24
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: documents/templates/universaldocuments/base.html:58
+msgid "Share link was not found."
+msgstr "Link nie został odnaleziony."
+
+#: documents/templates/universaldocuments/base.html:62
+msgid "Share link has expired."
+msgstr "Link utracił ważność."
+
+#: documents/templates/socialaccount/authentication_error.html:5
+#: documents/templates/socialaccount/login.html:5
+msgid "Universal Documents social account sign in"
+msgstr "Logowanie do Universal Documents poprzez konto społecznościowe"
+
+#: documents/templates/socialaccount/authentication_error.html:10
+msgid "An error occurred while attempting to login via your social network account. Back to the"
+msgstr "Wystąpił błąd podczas próby zalogowania się za pośrednictwem konta sieci społecznościowej. Powrót do strony logowania"
+
+#: documents/templates/socialaccount/authentication_error.html:10
+msgid "login page"
+msgstr "strona logowania"
+
+#: documents/templates/socialaccount/login.html:11
+#, python-format
+msgid "You are about to connect a new third-party account from %(provider)s."
+msgstr "Zamierzasz podłączyć nowe konto strony trzeciej od %(provider)s."
+
+#: documents/templates/socialaccount/login.html:15
+msgid "Continue"
+msgstr "Kontynuuj"
+
+#: documents/templates/socialaccount/signup.html:5
+msgid "Universal Documents social account sign up"
+msgstr "Zarejestruj w Universal Documents konto społecznościowe"
+
+#: documents/templates/socialaccount/signup.html:11
+#, python-format
+msgid "You are about to use your %(provider_name)s account to login."
+msgstr "Zamierzasz użyć konta %(provider_name)s aby się zalogować."
+
+#: documents/templates/socialaccount/signup.html:13
+msgid "As a final step, please complete the following form:"
+msgstr "Na koniec należy wypełnić poniższy formularz:"
+
+#: documents/validators.py:36
+msgid ", "
+msgstr ""
+
+#: documents/views.py:311
+msgid "Specify only one of text, title_search, query, or more_like_id."
+msgstr ""
+
+#: documents/views.py:349 documents/views.py:2758
+msgid "Invalid more_like_id"
+msgstr "Nieprawidłowy more_like_id"
+
+#: documents/views.py:1681
+msgid "Invalid AI configuration."
+msgstr ""
+
+#: documents/views.py:1692
+msgid "AI backend request timed out."
+msgstr ""
+
+#: documents/views.py:1704
+msgid "AI backend rejected the request. Check logs for details."
+msgstr ""
+
+#: documents/views.py:4810
+#, python-format
+msgid "Insufficient permissions to share document %(id)s."
+msgstr "Brak uprawnień do udostępnienia dokumentu %(id)s."
+
+#: documents/views.py:4857
+msgid "Bundle is already being processed."
+msgstr "Pakiet jest już przetwarzany."
+
+#: documents/views.py:4923
+msgid "The share link bundle is still being prepared. Please try again later."
+msgstr "Pakiet do udostępnienia jest nadal przygotowywany. Spróbuj ponownie później."
+
+#: documents/views.py:4937
+msgid "The share link bundle is unavailable."
+msgstr "Pakiet do udostępnienia jest niedostępny."
+
+#: universaldocuments/apps.py:11
+msgid "Universal"
+msgstr "Universal"
+
+#: universaldocuments/models.py:26
+msgid "pdf"
+msgstr "pdf"
+
+#: universaldocuments/models.py:27
+msgid "pdfa"
+msgstr "pdfa"
+
+#: universaldocuments/models.py:28
+msgid "pdfa-1"
+msgstr "pdfa-1"
+
+#: universaldocuments/models.py:29
+msgid "pdfa-2"
+msgstr "pdfa-2"
+
+#: universaldocuments/models.py:30
+msgid "pdfa-3"
+msgstr "pdfa-3"
+
+#: universaldocuments/models.py:39 universaldocuments/models.py:50
+msgid "auto"
+msgstr ""
+
+#: universaldocuments/models.py:40
+msgid "force"
+msgstr "force"
+
+#: universaldocuments/models.py:41
+msgid "redo"
+msgstr "redo"
+
+#: universaldocuments/models.py:42
+msgid "off"
+msgstr ""
+
+#: universaldocuments/models.py:51
+msgid "always"
+msgstr "always"
+
+#: universaldocuments/models.py:52
+msgid "never"
+msgstr "never"
+
+#: universaldocuments/models.py:60
+msgid "clean"
+msgstr "wyczyść"
+
+#: universaldocuments/models.py:61
+msgid "clean-final"
+msgstr "clean-final"
+
+#: universaldocuments/models.py:62
+msgid "none"
+msgstr "brak"
+
+#: universaldocuments/models.py:70
+msgid "LeaveColorUnchanged"
+msgstr "LeaveColorUnchanged"
+
+#: universaldocuments/models.py:71
+msgid "RGB"
+msgstr "RGB"
+
+#: universaldocuments/models.py:72
+msgid "UseDeviceIndependentColor"
+msgstr "UseDeviceIndependentColor"
+
+#: universaldocuments/models.py:73
+msgid "Gray"
+msgstr "Gray"
+
+#: universaldocuments/models.py:74
+msgid "CMYK"
+msgstr "CMYK"
+
+#: universaldocuments/models.py:82
+msgid "Azure AI Document Intelligence"
+msgstr ""
+
+#: universaldocuments/models.py:90
+msgid "All supported documents"
+msgstr ""
+
+#: universaldocuments/models.py:91
+msgid "Only when a workflow enables it"
+msgstr ""
+
+#: universaldocuments/models.py:95 universaldocuments/models.py:105
+msgid "OpenAI-compatible"
+msgstr ""
+
+#: universaldocuments/models.py:96
+msgid "Huggingface"
+msgstr "Hugging Face"
+
+#: universaldocuments/models.py:97 universaldocuments/models.py:106
+msgid "Ollama"
+msgstr "Ollama"
+
+#: universaldocuments/models.py:115
+msgid "Sets the output PDF type"
+msgstr "Określa wyjściowy typ PDF"
+
+#: universaldocuments/models.py:127
+msgid "Do OCR from page 1 to this value"
+msgstr "Wykonaj OCR od strony 1 do strony wskazanej"
+
+#: universaldocuments/models.py:133
+msgid "Do OCR using these languages"
+msgstr "Wykonaj OCR używając wskazanych języków"
+
+#: universaldocuments/models.py:140
+msgid "Sets the OCR mode"
+msgstr "Określa tryb OCR"
+
+#: universaldocuments/models.py:148
+msgid "Controls archive file generation"
+msgstr ""
+
+#: universaldocuments/models.py:156
+msgid "Sets image DPI fallback value"
+msgstr "Określa wartość rezerwową dla DPI obrazu"
+
+#: universaldocuments/models.py:163
+msgid "Controls the unpaper cleaning"
+msgstr "Zarządza procesem oczyszczania skanów"
+
+#: universaldocuments/models.py:170
+msgid "Enables deskew"
+msgstr "Włącza prostowanie"
+
+#: universaldocuments/models.py:173
+msgid "Enables page rotation"
+msgstr "Włącza obracanie strony"
+
+#: universaldocuments/models.py:178
+msgid "Sets the threshold for rotation of pages"
+msgstr "Określa próg dla obracania strony"
+
+#: universaldocuments/models.py:184
+msgid "Sets the maximum image size for decompression"
+msgstr "Ustawia maksymalny rozmiar obrazu dla dekompresji"
+
+#: universaldocuments/models.py:190
+msgid "Sets the Ghostscript color conversion strategy"
+msgstr "Określa strategię konwersji kolorów przez Ghostscript"
+
+#: universaldocuments/models.py:198
+msgid "Adds additional user arguments for OCRMyPDF"
+msgstr "Dodaje dodatkowe argumenty dla OCRMyPDF"
+
+#: universaldocuments/models.py:207
+msgid "Application title"
+msgstr "Tytuł aplikacji"
+
+#: universaldocuments/models.py:214
+msgid "Application logo"
+msgstr "Logo aplikacji"
+
+#: universaldocuments/models.py:229
+msgid "Enables barcode scanning"
+msgstr "Umożliwia skanowanie kodów kreskowych"
+
+#: universaldocuments/models.py:235
+msgid "Enables barcode TIFF support"
+msgstr "Włącza obsługę TIFF dla kodów kreskowych"
+
+#: universaldocuments/models.py:241
+msgid "Sets the barcode string"
+msgstr "Ustawia ciąg kodu kreskowego"
+
+#: universaldocuments/models.py:249
+msgid "Retains split pages"
+msgstr "Zachowuje podzielone strony"
+
+#: universaldocuments/models.py:255
+msgid "Enables ASN barcode"
+msgstr "Włącza kod kreskowy ASN"
+
+#: universaldocuments/models.py:261
+msgid "Sets the ASN barcode prefix"
+msgstr "Ustawia prefiks kodu kreskowego ASN"
+
+#: universaldocuments/models.py:269
+msgid "Sets the barcode upscale factor"
+msgstr "Ustawia współczynnik skalowania kodu kreskowego"
+
+#: universaldocuments/models.py:276
+msgid "Sets the barcode DPI"
+msgstr "Ustawia DPI kodu kreskowego"
+
+#: universaldocuments/models.py:283
+msgid "Sets the maximum pages for barcode"
+msgstr "Ustawia maksymalną liczbę stron dla kodu kreskowego"
+
+#: universaldocuments/models.py:290
+msgid "Enables tag barcode"
+msgstr "Włącza kod kreskowy tagu"
+
+#: universaldocuments/models.py:296
+msgid "Sets the tag barcode mapping"
+msgstr "Ustawia mapowanie kodu kreskowego tagu"
+
+#: universaldocuments/models.py:302
+msgid "Enables splitting on tag barcodes"
+msgstr "Umożliwia dzielenie dokumentów na podstawie kodów kreskowych tagów"
+
+#: universaldocuments/models.py:308
+msgid "Stores the values of detected barcodes"
+msgstr ""
+
+#: universaldocuments/models.py:318
+msgid "Sets the remote OCR engine"
+msgstr ""
+
+#: universaldocuments/models.py:327
+msgid "Sets the remote OCR API key"
+msgstr ""
+
+#: universaldocuments/models.py:335
+msgid "Sets the remote OCR endpoint"
+msgstr ""
+
+#: universaldocuments/models.py:343
+msgid "Sets which documents are sent to the remote OCR engine"
+msgstr ""
+
+#: universaldocuments/models.py:355
+msgid "Enables AI features"
+msgstr "Włącza funkcje oparte na sztucznej inteligencji"
+
+#: universaldocuments/models.py:360
+msgid "Sets the LLM embedding backend"
+msgstr "Ustawia usługę do analizy treści dokumentów"
+
+#: universaldocuments/models.py:368
+msgid "Sets the LLM embedding model"
+msgstr "Ustawia model do analizy treści dokumentów"
+
+#: universaldocuments/models.py:375
+msgid "Sets the LLM embedding API key"
+msgstr ""
+
+#: universaldocuments/models.py:382
+msgid "Sets the LLM embedding endpoint, optional"
+msgstr ""
+
+#: universaldocuments/models.py:389
+msgid "Sets the LLM embedding chunk size"
+msgstr ""
+
+#: universaldocuments/models.py:395
+msgid "Sets the LLM context size"
+msgstr ""
+
+#: universaldocuments/models.py:401
+msgid "Sets the LLM backend"
+msgstr "Ustawia usługę sztucznej inteligencji"
+
+#: universaldocuments/models.py:409
+msgid "Sets the LLM model"
+msgstr "Ustawia model sztucznej inteligencji"
+
+#: universaldocuments/models.py:416
+msgid "Sets the LLM API key"
+msgstr "Ustawia klucz dostępu do usługi AI"
+
+#: universaldocuments/models.py:423
+msgid "Sets the LLM endpoint, optional"
+msgstr "Ustawia adres usługi AI (opcjonalnie)"
+
+#: universaldocuments/models.py:430
+msgid "Sets the LLM output language"
+msgstr ""
+
+#: universaldocuments/models.py:437
+msgid "Sets the LLM timeout in seconds"
+msgstr ""
+
+#: universaldocuments/models.py:443
+msgid "universaldocuments application settings"
+msgstr "universaldocuments ustawienia aplikacji"
+
+#: universaldocuments/settings/__init__.py:582
+msgid "English (US)"
+msgstr "Angielski (USA)"
+
+#: universaldocuments/settings/__init__.py:583
+msgid "Arabic"
+msgstr "arabski"
+
+#: universaldocuments/settings/__init__.py:584
+msgid "Afrikaans"
+msgstr "Afrykanerski"
+
+#: universaldocuments/settings/__init__.py:585
+msgid "Belarusian"
+msgstr "Białoruski"
+
+#: universaldocuments/settings/__init__.py:586
+msgid "Bulgarian"
+msgstr "Bułgarski"
+
+#: universaldocuments/settings/__init__.py:587
+msgid "Catalan"
+msgstr "Kataloński"
+
+#: universaldocuments/settings/__init__.py:588
+msgid "Czech"
+msgstr "Czeski"
+
+#: universaldocuments/settings/__init__.py:589
+msgid "Danish"
+msgstr "Duński"
+
+#: universaldocuments/settings/__init__.py:590
+msgid "German"
+msgstr "Niemiecki"
+
+#: universaldocuments/settings/__init__.py:591
+msgid "Greek"
+msgstr "Grecki"
+
+#: universaldocuments/settings/__init__.py:592
+msgid "English (GB)"
+msgstr "Angielski (Wielka Brytania)"
+
+#: universaldocuments/settings/__init__.py:593
+msgid "Spanish"
+msgstr "Hiszpański"
+
+#: universaldocuments/settings/__init__.py:594
+msgid "Persian"
+msgstr "perski"
+
+#: universaldocuments/settings/__init__.py:595
+msgid "Finnish"
+msgstr "Fiński"
+
+#: universaldocuments/settings/__init__.py:596
+msgid "French"
+msgstr "Francuski"
+
+#: universaldocuments/settings/__init__.py:597
+msgid "Hungarian"
+msgstr "Węgierski"
+
+#: universaldocuments/settings/__init__.py:598
+msgid "Indonesian"
+msgstr "Indonezyjski"
+
+#: universaldocuments/settings/__init__.py:599
+msgid "Italian"
+msgstr "Włoski"
+
+#: universaldocuments/settings/__init__.py:600
+msgid "Japanese"
+msgstr "Japoński"
+
+#: universaldocuments/settings/__init__.py:601
+msgid "Korean"
+msgstr "Koreański"
+
+#: universaldocuments/settings/__init__.py:602
+msgid "Luxembourgish"
+msgstr "Luksemburski"
+
+#: universaldocuments/settings/__init__.py:603
+msgid "Norwegian"
+msgstr "Norweski"
+
+#: universaldocuments/settings/__init__.py:604
+msgid "Dutch"
+msgstr "Holenderski"
+
+#: universaldocuments/settings/__init__.py:605
+msgid "Polish"
+msgstr "Polski"
+
+#: universaldocuments/settings/__init__.py:606
+msgid "Portuguese (Brazil)"
+msgstr "Portugalski (Brazylia)"
+
+#: universaldocuments/settings/__init__.py:607
+msgid "Portuguese"
+msgstr "Portugalski"
+
+#: universaldocuments/settings/__init__.py:608
+msgid "Romanian"
+msgstr "Rumuński"
+
+#: universaldocuments/settings/__init__.py:609
+msgid "Russian"
+msgstr "Rosyjski"
+
+#: universaldocuments/settings/__init__.py:610
+msgid "Slovak"
+msgstr "Słowacki"
+
+#: universaldocuments/settings/__init__.py:611
+msgid "Slovenian"
+msgstr "Słoweński"
+
+#: universaldocuments/settings/__init__.py:612
+msgid "Serbian"
+msgstr "Serbski"
+
+#: universaldocuments/settings/__init__.py:613
+msgid "Swedish"
+msgstr "Szwedzki"
+
+#: universaldocuments/settings/__init__.py:614
+msgid "Turkish"
+msgstr "Turecki"
+
+#: universaldocuments/settings/__init__.py:615
+msgid "Ukrainian"
+msgstr "Ukraiński"
+
+#: universaldocuments/settings/__init__.py:616
+msgid "Vietnamese"
+msgstr "Wietnamski"
+
+#: universaldocuments/settings/__init__.py:617
+msgid "Chinese Simplified"
+msgstr "Chiński uproszczony"
+
+#: universaldocuments/settings/__init__.py:618
+msgid "Chinese Traditional"
+msgstr "chiński tradycyjny"
+
+#: universaldocuments/urls.py:438
+msgid "Universal Documents administration"
+msgstr "Administracja Universal Documents"
+
+#: universaldocuments_mail/admin.py:39
+msgid "Authentication"
+msgstr "Uwierzytelnianie"
+
+#: universaldocuments_mail/admin.py:42
+msgid "Advanced settings"
+msgstr "Ustawienia zaawansowane"
+
+#: universaldocuments_mail/admin.py:61
+msgid "Universal will only process mails that match ALL of the filters given below."
+msgstr "Universal przetworzy tylko wiadomości pasujące do WSZYSTKICH filtrów podanych poniżej."
+
+#: universaldocuments_mail/admin.py:78
+msgid "Actions"
+msgstr "Akcje"
+
+#: universaldocuments_mail/admin.py:81
+msgid "The action applied to the mail. This action is only performed when the mail body or attachments were consumed from the mail."
+msgstr "Akcja zastosowana do poczty. Ta akcja jest wykonywana tylko wtedy, gdy treść wiadomości czy też załączniki zostały pobrane z poczty elektronicznej."
+
+#: universaldocuments_mail/admin.py:89
+msgid "Metadata"
+msgstr "Metadane"
+
+#: universaldocuments_mail/admin.py:92
+msgid "Assign metadata to documents consumed from this rule automatically. If you do not assign tags, types or correspondents here, universaldocuments will still process all matching rules that you have defined."
+msgstr "Przypisz metadane do dokumentów zużywanych z tej reguły automatycznie. Jeśli nie przypisujesz tutaj tagów, typów lub korespondentów, Universal będzie nadal przetwarzał wszystkie zdefiniowane przez Ciebie reguły."
+
+#: universaldocuments_mail/apps.py:8
+msgid "Universal mail"
+msgstr "Poczta Universal"
+
+#: universaldocuments_mail/models.py:10
+msgid "mail account"
+msgstr "konto pocztowe"
+
+#: universaldocuments_mail/models.py:11
+msgid "mail accounts"
+msgstr "konta pocztowe"
+
+#: universaldocuments_mail/models.py:14
+msgid "No encryption"
+msgstr "Brak szyfrowania"
+
+#: universaldocuments_mail/models.py:15
+msgid "Use SSL"
+msgstr "Użyj SSL"
+
+#: universaldocuments_mail/models.py:16
+msgid "Use STARTTLS"
+msgstr "Użyj STARTTLS"
+
+#: universaldocuments_mail/models.py:19
+msgid "IMAP"
+msgstr "IMAP"
+
+#: universaldocuments_mail/models.py:20
+msgid "Gmail OAuth"
+msgstr "Gmail OAuth"
+
+#: universaldocuments_mail/models.py:21
+msgid "Outlook OAuth"
+msgstr "Outlook OAuth"
+
+#: universaldocuments_mail/models.py:25
+msgid "IMAP server"
+msgstr "Serwer IMAP"
+
+#: universaldocuments_mail/models.py:28
+msgid "IMAP port"
+msgstr "Port IMAP"
+
+#: universaldocuments_mail/models.py:32
+msgid "This is usually 143 for unencrypted and STARTTLS connections, and 993 for SSL connections."
+msgstr "Zwykle jest to 143 dla połączeń niezaszyfrowanych i STARTTLS oraz 993 dla połączeń SSL."
+
+#: universaldocuments_mail/models.py:38
+msgid "IMAP security"
+msgstr "Zabezpieczenia IMAP"
+
+#: universaldocuments_mail/models.py:43
+msgid "username"
+msgstr "nazwa użytkownika"
+
+#: universaldocuments_mail/models.py:45
+msgid "password"
+msgstr "hasło"
+
+#: universaldocuments_mail/models.py:47
+msgid "Is token authentication"
+msgstr "Jest uwierzytelnienie tokenem"
+
+#: universaldocuments_mail/models.py:50
+msgid "character set"
+msgstr "Kodowanie"
+
+#: universaldocuments_mail/models.py:54
+msgid "The character set to use when communicating with the mail server, such as 'UTF-8' or 'US-ASCII'."
+msgstr "Zestaw znaków używany podczas komunikowania się z serwerem poczty, np. \"UTF-8\" lub \"US-ASCII\"."
+
+#: universaldocuments_mail/models.py:60
+msgid "account type"
+msgstr "typ konta"
+
+#: universaldocuments_mail/models.py:66
+msgid "refresh token"
+msgstr "odśwież token"
+
+#: universaldocuments_mail/models.py:70
+msgid "The refresh token to use for token authentication e.g. with oauth2."
+msgstr "Odśwież token do uwierzytelniania tokenu, np. z oauth2."
+
+#: universaldocuments_mail/models.py:79
+msgid "The expiration date of the refresh token. "
+msgstr "Data wygaśnięcia tokenu odświeżenia. "
+
+#: universaldocuments_mail/models.py:89
+msgid "mail rule"
+msgstr "reguła wiadomości"
+
+#: universaldocuments_mail/models.py:90
+msgid "mail rules"
+msgstr "reguły wiadomości"
+
+#: universaldocuments_mail/models.py:104 universaldocuments_mail/models.py:115
+msgid "Only process attachments."
+msgstr "Przetwarzaj tylko załączniki."
+
+#: universaldocuments_mail/models.py:105
+msgid "Process full Mail (with embedded attachments in file) as .eml"
+msgstr "Przetwarzaj pełną wiadomości mailową (z załącznikami osadzonymi w pliku) jako .eml"
+
+#: universaldocuments_mail/models.py:109
+msgid "Process full Mail (with embedded attachments in file) as .eml + process attachments as separate documents"
+msgstr "Przetwarzaj pełną wiadomości mailową (z załącznikami osadzonymi w pliku) jako .eml + przetwórz załączniki jako osobne dokumenty"
+
+#: universaldocuments_mail/models.py:116
+msgid "Process all files, including 'inline' attachments."
+msgstr "Przetwarzaj wszystkie pliki, łącznie z załącznikami „inline”."
+
+#: universaldocuments_mail/models.py:119
+msgid "System default"
+msgstr "Domyślne systemowe"
+
+#: universaldocuments_mail/models.py:120
+msgid "Text, then HTML"
+msgstr "Tekst, a następnie HTML"
+
+#: universaldocuments_mail/models.py:121
+msgid "HTML, then text"
+msgstr "HTML, a następnie tekst"
+
+#: universaldocuments_mail/models.py:122
+msgid "HTML only"
+msgstr "Tylko HTML"
+
+#: universaldocuments_mail/models.py:123
+msgid "Text only"
+msgstr "Tylko tekst"
+
+#: universaldocuments_mail/models.py:126
+msgid "Delete"
+msgstr "Usuń"
+
+#: universaldocuments_mail/models.py:127
+msgid "Move to specified folder"
+msgstr "Przenieś do określonego folderu"
+
+#: universaldocuments_mail/models.py:128
+msgid "Mark as read, don't process read mails"
+msgstr "Oznacz jako przeczytane, nie przetwarzaj przeczytanych wiadomości"
+
+#: universaldocuments_mail/models.py:129
+msgid "Flag the mail, don't process flagged mails"
+msgstr "Oznacz wiadomość, nie przetwarzaj oznaczonych wiadomości"
+
+#: universaldocuments_mail/models.py:130
+msgid "Tag the mail with specified tag, don't process tagged mails"
+msgstr "Oznacz pocztę z podanym tagiem, nie przetwarzaj otagowanych wiadomości"
+
+#: universaldocuments_mail/models.py:133
+msgid "Use subject as title"
+msgstr "Użyj tematu jako tytułu"
+
+#: universaldocuments_mail/models.py:134
+msgid "Use attachment filename as title"
+msgstr "Użyj nazwy pliku załącznika jako tytułu"
+
+#: universaldocuments_mail/models.py:135
+msgid "Do not assign title from rule"
+msgstr "Nie przypisuj tytułu z reguły"
+
+#: universaldocuments_mail/models.py:138
+msgid "Do not assign a correspondent"
+msgstr "Nie przypisuj korespondenta"
+
+#: universaldocuments_mail/models.py:139
+msgid "Use mail address"
+msgstr "Użyj adresu e-mail"
+
+#: universaldocuments_mail/models.py:140
+msgid "Use name (or mail address if not available)"
+msgstr "Użyj nazwy nadawcy (lub adresu e-mail, jeśli jest niedostępna)"
+
+#: universaldocuments_mail/models.py:141
+msgid "Use correspondent selected below"
+msgstr "Użyj korespondenta wybranego poniżej"
+
+#: universaldocuments_mail/models.py:151
+msgid "account"
+msgstr "konto"
+
+#: universaldocuments_mail/models.py:157 universaldocuments_mail/models.py:326
+msgid "folder"
+msgstr "katalog"
+
+#: universaldocuments_mail/models.py:161
+msgid "Subfolders must be separated by a delimiter, often a dot ('.') or slash ('/'), but it varies by mail server."
+msgstr "Podfoldery muszą być oddzielone ogranicznikiem, często kropką ('.') lub cięciem ('/'), ale różni się w zależności od serwera pocztowego."
+
+#: universaldocuments_mail/models.py:167
+msgid "filter from"
+msgstr "filtruj po nadawcy"
+
+#: universaldocuments_mail/models.py:174
+msgid "filter to"
+msgstr "filtruj po odbiorcy"
+
+#: universaldocuments_mail/models.py:181
+msgid "filter subject"
+msgstr "filtruj po temacie"
+
+#: universaldocuments_mail/models.py:188
+msgid "filter body"
+msgstr "filtruj po treści"
+
+#: universaldocuments_mail/models.py:195
+msgid "filter attachment filename inclusive"
+msgstr "uwzględnij nazwę załącznika wg filtru"
+
+#: universaldocuments_mail/models.py:207
+msgid "filter attachment filename exclusive"
+msgstr "wyklucz nazwę załącznika wg filtru"
+
+#: universaldocuments_mail/models.py:212
+msgid "Do not consume documents which entirely match this filename if specified. Wildcards such as *.pdf or *invoice* are allowed. Case insensitive."
+msgstr "Nie pobieraj dokumentów, które w pełni pasują do tej nazwy pliku, jeśli jest określona. Dozwolone są maski, takie jak *.pdf lub *faktura*. Bez uwzględniania wielkości liter."
+
+#: universaldocuments_mail/models.py:219
+msgid "maximum age"
+msgstr "nie starsze niż"
+
+#: universaldocuments_mail/models.py:221
+msgid "Specified in days."
+msgstr "dni."
+
+#: universaldocuments_mail/models.py:225
+msgid "attachment type"
+msgstr "typ załącznika"
+
+#: universaldocuments_mail/models.py:229
+msgid "Inline attachments include embedded images, so it's best to combine this option with a filename filter."
+msgstr "Załączniki typu \"inline\" zawierają osadzone obrazy, więc najlepiej połączyć tę opcję z filtrem nazwy pliku."
+
+#: universaldocuments_mail/models.py:235
+msgid "consumption scope"
+msgstr "zakres pobierania"
+
+#: universaldocuments_mail/models.py:241
+msgid "pdf layout"
+msgstr "układ PDF"
+
+#: universaldocuments_mail/models.py:247
+msgid "action"
+msgstr "akcja"
+
+#: universaldocuments_mail/models.py:253
+msgid "action parameter"
+msgstr "parametr akcji"
+
+#: universaldocuments_mail/models.py:258
+msgid "Additional parameter for the action selected above, i.e., the target folder of the move to folder action. Subfolders must be separated by dots."
+msgstr "Dodatkowy parametr dla akcji wybranej powyżej, tj. docelowy folder akcji \"Przenieś do określonego folderu\". Podfoldery muszą być oddzielone kropkami."
+
+#: universaldocuments_mail/models.py:266
+msgid "assign title from"
+msgstr "przypisz tytuł"
+
+#: universaldocuments_mail/models.py:286
+msgid "assign correspondent from"
+msgstr "przypisz korespondenta z"
+
+#: universaldocuments_mail/models.py:300
+msgid "Assign the rule owner to documents"
+msgstr "Przypisz właścicela reguły do dokumentów"
+
+#: universaldocuments_mail/models.py:305
+msgid "Stop processing further rules"
+msgstr "Zatrzymaj przetwarzanie kolejnych reguł"
+
+#: universaldocuments_mail/models.py:308
+msgid "If True, no further rules will be processed after this one if any document is queued."
+msgstr "Jeśli włączone, po tej regule nie będą przetwarzane kolejne reguły, jeśli dokument trafi do kolejki."
+
+#: universaldocuments_mail/models.py:334
+msgid "uid"
+msgstr "uid"
+
+#: universaldocuments_mail/models.py:342
+msgid "uid validity"
+msgstr ""
+
+#: universaldocuments_mail/models.py:350
+msgid "subject"
+msgstr "temat"
+
+#: universaldocuments_mail/models.py:358
+msgid "received"
+msgstr "otrzymano"
+
+#: universaldocuments_mail/models.py:365
+msgid "processed"
+msgstr "przetworzono"
+
+#: universaldocuments_mail/models.py:371
+msgid "status"
+msgstr "status"
+
+#: universaldocuments_mail/models.py:379
+msgid "error"
+msgstr "błąd"
+

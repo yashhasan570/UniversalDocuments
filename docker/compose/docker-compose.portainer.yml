@@ -1,0 +1,66 @@
+# Docker Compose file for running universaldocuments from the Docker Hub.
+# This file contains everything universaldocuments needs to run.
+# Universal supports amd64, arm and arm64 hardware.
+#
+# All compose files of universaldocuments configure universaldocuments in the following way:
+#
+# - Universal is (re)started on system boot, if it was running before shutdown.
+# - Docker volumes for storing data are managed by Docker.
+# - Folders for importing and exporting files are created in the same directory
+#   as this file and mounted to the correct folders inside the container.
+# - Universal listens on port 8010.
+#
+# In addition to that, this Docker Compose file adds the following optional
+# configurations:
+#
+# - Instead of SQLite (default), PostgreSQL is used as the database server.
+#
+# To install and update universaldocuments with this file, do the following:
+#
+# - Open portainer Stacks list and click 'Add stack'
+# - Paste the contents of this file and assign a name, e.g. 'universaldocuments'
+# - Upload 'docker-compose.env' by clicking on 'Load variables from .env file'
+# - Modify the environment variables as needed
+# - Click 'Deploy the stack' and wait for it to be deployed
+#
+# For more extensive installation and update instructions, refer to the
+# documentation.
+services:
+  broker:
+    image: docker.io/valkey/valkey:9-alpine
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+  db:
+    image: docker.io/library/postgres:18
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql
+    environment:
+      POSTGRES_DB: universaldocuments
+      POSTGRES_USER: universaldocuments
+      POSTGRES_PASSWORD: universaldocuments
+  webserver:
+    image: ghcr.io/universaldocuments/universaldocuments:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+    ports:
+      - "8010:8000"
+    volumes:
+      - data:/usr/src/universaldocuments/data
+      - media:/usr/src/universaldocuments/media
+      - ./export:/usr/src/universaldocuments/export
+      - ./consume:/usr/src/universaldocuments/consume
+    environment:
+      UNIVERSALDOCUMENTS_REDIS: redis://broker:6379
+      UNIVERSALDOCUMENTS_DBHOST: db
+      UNIVERSALDOCUMENTS_DBENGINE: postgresql
+    env_file:
+      - stack.env
+volumes:
+  data:
+  media:
+  pgdata:
+  redisdata:

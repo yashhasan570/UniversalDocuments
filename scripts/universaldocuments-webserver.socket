@@ -1,0 +1,9 @@
+[Unit]
+Description=Universal Webserver Socket
+
+[Socket]
+ListenStream=80
+NoDelay=true
+
+[Install]
+WantedBy=sockets.target

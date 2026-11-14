@@ -1,0 +1,68 @@
+# Docker Compose file for running universaldocuments from the Docker Hub.
+# This file contains everything universaldocuments needs to run.
+# Universal supports amd64, arm and arm64 hardware.
+#
+# All compose files of universaldocuments configure universaldocuments in the following way:
+#
+# - Universal is (re)started on system boot, if it was running before shutdown.
+# - Docker volumes for storing data are managed by Docker.
+# - Folders for importing and exporting files are created in the same directory
+#   as this file and mounted to the correct folders inside the container.
+# - Universal listens on port 8000.
+#
+# In addition to that, this Docker Compose file adds the following optional
+# configurations:
+#
+# - Instead of SQLite (default), MariaDB is used as the database server.
+#
+# To install and update universaldocuments with this file, do the following:
+#
+# - Copy this file as 'docker-compose.yml' and the files 'docker-compose.env'
+#   and '.env' into a folder.
+# - Run 'docker compose pull'.
+# - Run 'docker compose up -d'.
+#
+# For more extensive installation and update instructions, refer to the
+# documentation.
+services:
+  broker:
+    image: docker.io/valkey/valkey:9-alpine
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+  db:
+    image: docker.io/library/mariadb:12
+    restart: unless-stopped
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      MARIADB_DATABASE: universaldocuments
+      MARIADB_USER: universaldocuments
+      MARIADB_PASSWORD: universaldocuments
+      MARIADB_ROOT_PASSWORD: universaldocuments
+  webserver:
+    image: ghcr.io/universaldocuments/universaldocuments:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+    ports:
+      - "8000:8000"
+    volumes:
+      - data:/usr/src/universaldocuments/data
+      - media:/usr/src/universaldocuments/media
+      - ./export:/usr/src/universaldocuments/export
+      - ./consume:/usr/src/universaldocuments/consume
+    env_file: docker-compose.env
+    environment:
+      UNIVERSALDOCUMENTS_REDIS: redis://broker:6379
+      UNIVERSALDOCUMENTS_DBENGINE: mariadb
+      UNIVERSALDOCUMENTS_DBHOST: db
+      UNIVERSALDOCUMENTS_DBUSER: universaldocuments # only needed if non-default username
+      UNIVERSALDOCUMENTS_DBPASS: universaldocuments # only needed if non-default password
+      UNIVERSALDOCUMENTS_DBPORT: 3306
+volumes:
+  data:
+  media:
+  dbdata:
+  redisdata:

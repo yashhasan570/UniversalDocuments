@@ -1,0 +1,11 @@
+#!/command/with-contenv /usr/bin/bash
+# shellcheck shell=bash
+
+cd ${UNIVERSALDOCUMENTS_SRC_DIR}
+
+# Django system checks already ran once in init-system-checks, skip repeating them
+if [[ -n "${USER_IS_NON_ROOT}" ]]; then
+	exec /usr/local/bin/celery --skip-checks --app universaldocuments worker --loglevel INFO --without-mingle --without-gossip
+else
+	exec s6-setuidgid universaldocuments /usr/local/bin/celery --skip-checks --app universaldocuments worker --loglevel INFO --without-mingle --without-gossip
+fi

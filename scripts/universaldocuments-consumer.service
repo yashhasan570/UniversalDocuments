@@ -1,0 +1,12 @@
+[Unit]
+Description=Universal consumer
+Requires=redis.service
+
+[Service]
+User=universaldocuments
+Group=universaldocuments
+WorkingDirectory=/opt/universaldocuments/src
+ExecStart=python3 manage.py document_consumer
+
+[Install]
+WantedBy=multi-user.target

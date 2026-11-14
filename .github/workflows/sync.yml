@@ -1,0 +1,33 @@
+name: Sync upstream
+
+on:
+  schedule:
+    - cron: '55 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Sync upstream source
+        run: |
+          git config user.name "yashhasan570"
+          git config user.email "hasankhalid700570@gmail.com"
+          rsync -a --delete --exclude=.git --exclude=.github --exclude=README.md --exclude=scripts --exclude=docs --exclude=uv.lock \
+            https://github.com/paperless-ngx/paperless-ngx/ ./ || true
+          git clone --depth 1 https://github.com/paperless-ngx/paperless-ngx /tmp/upstream
+          rsync -a --delete --exclude=.git --exclude=.github --exclude=README.md --exclude=scripts --exclude=docs --exclude=uv.lock /tmp/upstream/ ./
+          rm -rf /tmp/upstream
+      - name: Reapply rebrand
+        run: |
+          python3 scripts/migrate.py
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Sync upstream + rebrand reapply"
+            git push
+          fi
