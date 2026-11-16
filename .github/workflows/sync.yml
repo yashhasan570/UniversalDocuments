@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '55 5 * * *'
   workflow_dispatch:
+permissions:
+  contents: write
 
 jobs:
   sync:
@@ -31,3 +33,4 @@ jobs:
             git commit -m "Sync upstream + rebrand reapply"
             git push
           fi
+
