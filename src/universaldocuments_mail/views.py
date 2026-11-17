@@ -30,6 +30,7 @@ from documents.permissions import UniversalObjectPermissions
 from documents.permissions import has_perms_owner_aware
 from documents.permissions import permitted_object_ids
 from documents.views import PassUserMixin
+from universaldocuments.fields import is_obfuscated_password
 from universaldocuments.views import StandardPagination
 from universaldocuments_mail.filters import ProcessedMailFilterSet
 from universaldocuments_mail.mail import MailError
@@ -126,9 +127,8 @@ class MailAccountViewSet(PassUserMixin, ModelViewSet[MailAccount]):
                 return HttpResponseForbidden("Insufficient permissions")
 
         # account exists, use the password from there instead of ***
-        if (
-            len(serializer.validated_data.get("password").replace("*", "")) == 0
-            and existing_account is not None
+        if existing_account is not None and is_obfuscated_password(
+            serializer.validated_data.get("password"),
         ):
             serializer.validated_data["password"] = existing_account.password
             serializer.validated_data["account_type"] = existing_account.account_type

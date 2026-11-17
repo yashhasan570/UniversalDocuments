@@ -41,6 +41,7 @@ from documents.models import UniversalTask
 from documents.permissions import UniversalModelPermissions
 from documents.permissions import UniversalObjectPermissions
 from documents.tasks import llmindex_index
+from universaldocuments.fields import is_obfuscated_password
 from universaldocuments.filters import GroupFilterSet
 from universaldocuments.filters import UserFilterSet
 from universaldocuments.models import ApplicationConfiguration
@@ -260,7 +261,7 @@ class ProfileView(GenericAPIView[Any]):
         user = self.request.user if hasattr(self.request, "user") else None
 
         password = serializer.validated_data.pop("password", None)
-        if password and password.replace("*", ""):
+        if password and not is_obfuscated_password(password):
             user.set_password(password)
             user.save()
 
